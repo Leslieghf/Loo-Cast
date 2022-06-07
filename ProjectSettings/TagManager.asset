@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - PlayerBullet
+  - ExperienceOrb
+  - EnemyStation
+  - PlayerStation
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - Player
+  - Enemy
+  - PlayerBullet
+  - EnemyBullet
+  - PlayerStructure
+  - EnemyStructure
+  - Indicator
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: AreaEffect
+    uniqueID: 3631144777
+    locked: 0
+  - name: Enemy
+    uniqueID: 3533372387
+    locked: 0
+  - name: Pickup
+    uniqueID: 3613190349
+    locked: 0
+  - name: Player
+    uniqueID: 2759097959
+    locked: 0
+  - name: Projectile
+    uniqueID: 133321247
+    locked: 0
+  - name: Layer 6
+    uniqueID: 978045377
+    locked: 0
