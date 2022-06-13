@@ -14,7 +14,7 @@ namespace LooCast.Enemy
     using Target;
     using Experience;
 
-    [RequireComponent(typeof(Movement), typeof(EnemyHealth), typeof(Targeting)), DisallowMultipleComponent]
+    [RequireComponent(typeof(Movement), typeof(EnemyHealth)), DisallowMultipleComponent]
     public abstract class Enemy : ExtendedMonoBehaviour
     {
         public readonly static List<Enemy> enemies = new List<Enemy>();

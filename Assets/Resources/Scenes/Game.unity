@@ -493,6 +493,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8a4dbd391ef034280f750fa3c76121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxHP:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: cfb7319e6b672454c8910ea4f79902f4, type: 2}
+  RegenerationAmount:
+    UseConstant: 1
+    ConstantValue: 0
+    Variable: {fileID: 0}
   onKilled:
     m_PersistentCalls:
       m_Calls: []
@@ -9448,7 +9456,7 @@ GameObject:
   - component: {fileID: 1462691212}
   - component: {fileID: 1462691213}
   m_Layer: 0
-  m_Name: Generator
+  m_Name: Enemy Station Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
