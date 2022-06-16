@@ -13,6 +13,7 @@ namespace LooCast.Manager
     using Player;
     using Station;
     using Generator;
+    using Data.Runtime;
 
     public class GameSceneManager : SceneManager
     {
@@ -49,6 +50,9 @@ namespace LooCast.Manager
         private Generators generators;
         public Generators Generators { get { return generators; } }
 
+        [SerializeField]
+        private StationRuntimeSet stationRuntimeSet;
+
 
         private void Awake()
         {
@@ -69,6 +73,8 @@ namespace LooCast.Manager
 
         public void Initialize()
         {
+            stationRuntimeSet.Items.Clear();
+
             IsPaused = false;
             worldSpaceCanvas.Initialize();
             background.Initialize();

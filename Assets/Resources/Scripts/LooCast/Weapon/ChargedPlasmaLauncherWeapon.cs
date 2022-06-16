@@ -6,69 +6,67 @@ namespace LooCast.Weapon
 {
     using Projectile;
     using Target;
+    using Data.Weapon;
 
     public class ChargedPlasmaLauncherWeapon : Weapon
     {
-        public const float arcLifetime = 0.5f;
-        public const float initialWidth = 0.5f;
-        public const float widthMultiplier = 0.9f;
-        public const float minWidth = 0.01f;
-        public const int branchTries = 3;
+        public float arcLifetime { get; private set; }
+        public float arcInitialWidth { get; private set; }
+        public float arcWidthMultiplier { get; private set; }
+        public float arcMinWidth { get; private set; }
+        public int arcBranchAttempts { get; private set; }
+        public float minSpreadDistance { get; private set; }
+        public float minSpreadDistanceMultiplier { get; private set; }
+        public float maxSpreadDistance { get; private set; }
+        public float maxSpreadDistanceMultiplier { get; private set; }
+        public float minSpreadAngle { get; private set; }
+        public float minSpreadAngleMultiplier { get; private set; }
+        public float maxSpreadAngle { get; private set; }
+        public float maxSpreadAngleMultiplier { get; private set; }
+        public float spreadChance { get; private set; }
+        public float spreadChanceMultiplier { get; private set; }
+        public float minBranchDistance { get; private set; }
+        public float minBranchDistanceMultiplier { get; private set; }
+        public float maxBranchDistance { get; private set; }
+        public float maxBranchDistanceMultiplier { get; private set; }
+        public float minBranchAngle { get; private set; }
+        public float minBranchAngleMultiplier { get; private set; }
+        public float maxBranchAngle { get; private set; }
+        public float maxBranchAngleMultiplier { get; private set; }
+        public float branchChance { get; private set; }
+        public float branchChanceMultiplier { get; private set; }
+        public int maxRecursionDepth { get; private set; }
 
-        
-
-        public const float minSpreadDistance = 0.0f;
-        public const float minSpreadDistanceMultiplier = 1.0f;
-
-        public const float maxSpreadDistance = 40.0f;
-        public const float maxSpreadDistanceMultiplier = 0.9f;
-
-        public const float minSpreadAngle = 0.0f;
-        public const float minSpreadAngleMultiplier = 1.0f;
-
-        public const float maxSpreadAngle = 30.0f;
-        public const float maxSpreadAngleMultiplier = 0.9f;
-
-        public const float spreadChance = 5.0f;
-        public const float spreadChanceMultiplier = 0.75f;
-
-
-
-        public const float minBranchDistance = 0.0f;
-        public const float minBranchDistanceMultiplier = 1.0f;
-
-        public const float maxBranchDistance = 25.0f;
-        public const float maxBranchDistanceMultiplier = 0.9f;
-
-        public const float minBranchAngle = 30.0f;
-        public const float minBranchAngleMultiplier = 1.0f;
-
-        public const float maxBranchAngle = 60.0f;
-        public const float maxBranchAngleMultiplier = 1.0f;
-
-        public const float branchChance = 1.5f;
-        public const float branchChanceMultiplier = 0.75f;
-
-        public const int maxRecursion = 10;
-
-
-
-        public new void Initialize
-            (
-            float baseDamage = 20.0f,
-            float baseCritChance = 0.01f,
-            float baseCritDamage = 100.0f,
-            float baseKnockback = 0.0f,
-            float baseAttackDelay = 10.0f,
-            float baseProjectileSpeed = 100.0f,
-            float baseProjectileSize = 1.0f,
-            float baseProjectileLifetime = 2.0f,
-            int basePiercing = 0,
-            int baseArmorPenetration = int.MaxValue
-            )
+        public void Initialize(ChargedPlasmaLauncherWeaponData data)
         {
-            base.Initialize(baseDamage, baseCritChance, baseCritDamage, baseKnockback, baseAttackDelay, baseProjectileSpeed, baseProjectileSize, baseProjectileLifetime, basePiercing, baseArmorPenetration);
-            prefab = Resources.Load<GameObject>("Prefabs/ChargedPlasmaProjectile");
+            base.Initialize(data);
+
+            arcLifetime = data.ArcLifetime.Value;
+            arcInitialWidth = data.ArcInitialWidth.Value;
+            arcWidthMultiplier = data.ArcWidthMultiplier.Value;
+            arcMinWidth = data.ArcMinWidth.Value;
+            arcBranchAttempts = data.ArcBranchAttempts.Value;
+            minSpreadDistance = data.MinSpreadDistance.Value;
+            minSpreadDistanceMultiplier = data.MinSpreadDistanceMultiplier.Value;
+            maxSpreadDistance = data.MaxSpreadDistance.Value;
+            maxSpreadDistanceMultiplier = data.MaxSpreadDistanceMultiplier.Value;
+            minSpreadAngle = data.MinSpreadAngle.Value;
+            minSpreadAngleMultiplier = data.MinSpreadAngleMultiplier.Value;
+            maxSpreadAngle = data.MaxSpreadAngle.Value;
+            maxSpreadAngleMultiplier = data.MaxSpreadAngleMultiplier.Value;
+            spreadChance = data.SpreadChance.Value;
+            spreadChanceMultiplier = data.SpreadChanceMultiplier.Value;
+            minBranchDistance = data.MinBranchDistance.Value;
+            minBranchDistanceMultiplier = data.MinBranchDistanceMultiplier.Value;
+            maxBranchDistance = data.MaxBranchDistance.Value;
+            maxBranchDistanceMultiplier = data.MaxBranchDistanceMultiplier.Value;
+            minBranchAngle = data.MinBranchAngle.Value;
+            minBranchAngleMultiplier = data.MinBranchAngleMultiplier.Value;
+            maxBranchAngle = data.MaxBranchAngle.Value;
+            maxBranchAngleMultiplier = data.MaxBranchAngleMultiplier.Value;
+            branchChance = data.BranchChance.Value;
+            branchChanceMultiplier = data.BranchChanceMultiplier.Value;
+            maxRecursionDepth = data.MaxRecursionDepth.Value;
         }
 
         public override bool TryFire()
@@ -82,9 +80,9 @@ namespace LooCast.Weapon
                 }
                 Target target = targets[0];
 
-                GameObject bulletObject = Instantiate(prefab, transform.position, Quaternion.identity);
+                GameObject bulletObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 bulletObject.transform.position += new Vector3(0, 0, 0.1f);
-                bulletObject.GetComponent<ChargedPlasmaProjectile>().Initialize(target, gameObject, damage, critChance, critDamage, knockback, projectileSpeed, projectileSize, projectileLifetime, armorPenetration, arcLifetime, initialWidth, widthMultiplier, minWidth, branchTries, minSpreadDistance, minSpreadDistanceMultiplier, maxSpreadDistance, maxSpreadDistanceMultiplier, minSpreadAngle, minSpreadAngleMultiplier, maxSpreadAngle, maxSpreadAngleMultiplier, spreadChance, spreadChanceMultiplier, minBranchDistance, minBranchDistanceMultiplier, maxBranchDistance, maxBranchDistanceMultiplier, minBranchAngle, minBranchAngleMultiplier, maxBranchAngle, maxBranchAngleMultiplier, branchChance, branchChanceMultiplier, maxRecursion);
+                bulletObject.GetComponent<ChargedPlasmaProjectile>().Initialize(target, gameObject, damage, critChance, critDamage, knockback, projectileSpeed, projectileSize, baseProjectileLifetime, armorPenetration, arcLifetime, arcInitialWidth, arcWidthMultiplier, arcMinWidth, arcBranchAttempts, minSpreadDistance, minSpreadDistanceMultiplier, maxSpreadDistance, maxSpreadDistanceMultiplier, minSpreadAngle, minSpreadAngleMultiplier, maxSpreadAngle, maxSpreadAngleMultiplier, spreadChance, spreadChanceMultiplier, minBranchDistance, minBranchDistanceMultiplier, maxBranchDistance, maxBranchDistanceMultiplier, minBranchAngle, minBranchAngleMultiplier, maxBranchAngle, maxBranchAngleMultiplier, branchChance, branchChanceMultiplier, maxRecursionDepth);
                 soundHandler.SoundShoot();
 
                 attackTimer = attackDelay;

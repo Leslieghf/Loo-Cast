@@ -8,12 +8,12 @@ namespace LooCast.Weapon
     using Sound;
     using Util;
     using Target;
+    using Data.Weapon;
 
     [RequireComponent(typeof(Targeting))]
     public abstract class Weapon : ExtendedMonoBehaviour
     {
         protected Targeting targeting;
-        protected GameObject prefab;
         protected GameSoundHandler soundHandler;
 
         public float baseDamage { get; protected set; }
@@ -37,26 +37,31 @@ namespace LooCast.Weapon
         public float projectileLifetime { get; protected set; }
         public int piercing { get; protected set; }
         public int armorPenetration { get; protected set; }
+        public string projectilePrefabResourcePath { get; protected set; }
+        public GameObject projectilePrefab { get; protected set; }
 
         [HideInInspector]
         public float attackTimer;
         public bool hasCooledDown { get; protected set; }
 
-        public virtual void Initialize(float baseDamage, float baseCritChance, float baseCritDamage, float baseKnockback, float baseAttackDelay, float baseProjectileSpeed, float baseProjectileSize, float baseProjectileLifetime, int basePiercing, int baseArmorPenetration)
+        public void Initialize(WeaponData data)
         {
             targeting = GetComponent<Targeting>();
             soundHandler = FindObjectOfType<GameSoundHandler>();
 
-            this.baseDamage = baseDamage;
-            this.baseCritChance = baseCritChance;
-            this.baseCritDamage = baseCritDamage;
-            this.baseKnockback = baseKnockback;
-            this.baseAttackDelay = baseAttackDelay;
-            this.baseProjectileSpeed = baseProjectileSpeed;
-            this.baseProjectileSize = baseProjectileSize;
-            this.projectileLifetime = baseProjectileLifetime;
-            this.basePiercing = basePiercing;
-            this.baseArmorPenetration = baseArmorPenetration;
+            baseDamage = data.BaseDamage.Value;
+            baseCritChance = data.BaseCritChance.Value;
+            baseCritDamage = data.BaseCritDamage.Value;
+            baseKnockback = data.BaseKnockback.Value;
+            baseAttackDelay = data.BaseAttackDelay.Value;
+            baseProjectileSpeed = data.BaseProjectileSpeed.Value;
+            baseProjectileSize = data.BaseProjectileSize.Value;
+            baseProjectileLifetime = data.BaseProjectileLifetime.Value;
+            basePiercing = data.BasePiercing.Value;
+            baseArmorPenetration = data.BaseArmorPenetration.Value;
+            projectilePrefabResourcePath = data.ProjectilePrefabResourcePath.Value;
+            projectilePrefab = Resources.Load<GameObject>(projectilePrefabResourcePath);
+
 
             damage = baseDamage * Stats.damageMultiplier;
             critChance = baseCritChance * Stats.randomChanceMultiplier;

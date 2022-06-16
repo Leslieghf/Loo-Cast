@@ -4,17 +4,24 @@ using UnityEngine;
 
 namespace LooCast.Station
 {
-    using Target;
-    using Weapon;
     using Spawner;
+    using Health;
+    using Data.Station;
 
     public class EnemyStation : Station
     {
         public EnemySpawner spawner { get; protected set; }
 
-        public override void Initialize()
+        public EnemyStationData stationData;
+
+        private void Start()
         {
-            base.Initialize();
+            Initialize(stationData);
+        }
+
+        public void Initialize(EnemyStationData data)
+        {
+            base.Initialize<EnemyStationHealth>(data);
 
             spawner = GetComponentInChildren<EnemySpawner>();
             spawner.Initialize();

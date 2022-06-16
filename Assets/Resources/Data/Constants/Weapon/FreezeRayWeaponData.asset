@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f143944bdddaf1b45ba3d109ea02c69f, type: 3}
+  m_Name: FreezeRayWeaponData
+  m_EditorClassIdentifier: 
+  BaseDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b00cf742f9d2ed742b9d86e90c67edaf, type: 2}
+  BaseCritChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c0c9975184a347d4a8f7375ad9e32c1b, type: 2}
+  BaseCritDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 0b8f80f92d23c8c4a99d93784c260eba, type: 2}
+  BaseKnockback:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: e124bd21547a0d948bf536a9c6ecf824, type: 2}
+  BaseAttackDelay:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b1cd4a48aa2da9848b23732d5b01213c, type: 2}
+  BaseProjectileSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 919ab2d331d98fa44a02713093bb4056, type: 2}
+  BaseProjectileSize:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: fd37995885ee5e14584000ac4dca41cb, type: 2}
+  BaseProjectileLifetime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 0c1ed739a36bfb545bd28ed646dc7574, type: 2}
+  BasePiercing:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 68c50b9cc00be04479844ae0f0d05bb2, type: 2}
+  BaseArmorPenetration:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3859d454fa8572b4e8dbde4187a6d550, type: 2}
+  ProjectilePrefabResourcePath:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: adb98c908c391fb48a3a9e9906b52f25, type: 2}

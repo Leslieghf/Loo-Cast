@@ -8,62 +8,26 @@ namespace LooCast.Weapon
     using Target;
     using Projectile;
     using System;
+    using Data.Weapon;
 
     public class MultiplexerWeapon : Weapon
     {
-        public int maxTargets { get; protected set; }
-        public int maxFragments { get; protected set; }
-        public int fragmentArmorPenetration { get; protected set; }
-        public int tier { get; protected set; }
+        public int maxTargets { get; private set; }
+        public int maxFragments { get; private set; }
+        public int fragmentArmorPenetration { get; private set; }
+        public bool isTargetSeeking { get; private set; }
+        public string fragmentPrefabResourcePath { get; protected set; }
+        public GameObject fragmentPrefab { get; protected set; }
 
-        public void Initialize
-            (
-            float baseDamage = 10.0f,
-            float baseCritChance = 0.01f,
-            float baseCritDamage = 75.0f,
-            float baseKnockback = 1.0f,
-            float baseAttackDelay = 2.5f,
-            float baseProjectileSpeed = 50.0f,
-            float baseProjectileSize = 1.0f,
-            float baseProjectileLifetime = 3.0f,
-            int basePiercing = 2,
-            int baseArmorPenetration = 0,
-            int maxTargets = 3,
-            int maxFragments = 3,
-            int fragmentArmorPenetration = 10,
-            int tier = 0
-            )
+        public void Initialize(MultiplexerWeaponData data)
         {
-            if (tier != 0)
-            {
-                switch (tier)
-                {
-                    case 1:
-                        baseDamage = 10.0f;
-                        baseCritChance = 0.01f;
-                        baseCritDamage = 75.0f;
-                        baseKnockback = 1.0f;
-                        baseAttackDelay = 0.25f;
-                        baseProjectileSpeed = 150.0f;
-                        baseProjectileSize = 1.0f;
-                        baseProjectileLifetime = 1.0f;
-                        basePiercing = 2;
-                        baseArmorPenetration = 0;
-                        maxTargets = 1;
-                        maxFragments = 0;
-                        fragmentArmorPenetration = int.MaxValue;
-                        break;
-                    default:
-                        throw new Exception("Tier does not exist!");
-                } 
-            }
-            base.Initialize(baseDamage, baseCritChance, baseCritDamage, baseKnockback, baseAttackDelay, baseProjectileSpeed, baseProjectileSize, baseProjectileLifetime, basePiercing, baseArmorPenetration);
-            this.maxTargets = maxTargets;
-            this.maxFragments = maxFragments;
-            this.fragmentArmorPenetration = fragmentArmorPenetration;
-            this.tier = tier;
+            base.Initialize(data);
 
-            prefab = Resources.Load<GameObject>("Prefabs/MultiplexerProjectile");
+            maxTargets = data.BaseMaxTargets.Value;
+            maxFragments = data.BaseMaxFragments.Value;
+            fragmentArmorPenetration = data.BaseFragmentArmorPenetration.Value;
+            isTargetSeeking = data.IsTargetSeeking.Value;
+            fragmentPrefab = Resources.Load<GameObject>(fragmentPrefabResourcePath);
         }
 
         public override bool TryFire()
@@ -78,14 +42,14 @@ namespace LooCast.Weapon
 
                 foreach (Target target in targets)
                 {
-                    GameObject bulletObject = Instantiate(prefab, transform.position, Quaternion.identity);
+                    GameObject bulletObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                     bulletObject.transform.position += new Vector3(0, 0, 0.1f);
                     var finalFragments = maxFragments;
                     if (maxFragments >= 1)
                     {
                         finalFragments = new Random().Next(1, maxFragments);
                     }
-                    bulletObject.GetComponent<MultiplexerProjectile>().Initialize(target, gameObject, damage, critChance, critDamage, knockback, projectileSpeed, projectileSize, projectileLifetime, piercing, armorPenetration, finalFragments, fragmentArmorPenetration, tier >= 1 ? true : false);
+                    bulletObject.GetComponent<MultiplexerProjectile>().Initialize(target, gameObject, damage, critChance, critDamage, knockback, projectileSpeed, projectileSize, baseProjectileLifetime, piercing, armorPenetration, finalFragments, fragmentArmorPenetration, isTargetSeeking, fragmentPrefab);
                 }
                 soundHandler.SoundShoot();
 

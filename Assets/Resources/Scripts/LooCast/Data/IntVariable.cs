@@ -1,7 +1,10 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "IntVariable", menuName = "Variables/IntVariable", order = 0)]
-public class IntVariable : ScriptableObject
+namespace LooCast.Data
 {
-    public int Value;
+    [CreateAssetMenu(fileName = "IntVariable", menuName = "Data/IntVariable", order = 0)]
+    public class IntVariable : ScriptableObject
+    {
+        public int Value;
+    } 
 }

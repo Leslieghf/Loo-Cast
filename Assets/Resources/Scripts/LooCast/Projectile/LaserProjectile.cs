@@ -119,6 +119,11 @@ namespace LooCast.Projectile
                     isRetracting = true;
                     rb.velocity = Vector3.zero;
                 }
+
+                if (CheckTags("EnemyStation"))
+                {
+                    Kill();
+                }
             }
         }
     } 

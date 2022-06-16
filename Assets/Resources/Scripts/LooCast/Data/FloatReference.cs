@@ -1,17 +1,20 @@
 using System;
 
-[Serializable]
-public class FloatReference 
+namespace LooCast.Data
 {
-    public bool UseConstant = true;
-    public float ConstantValue;
-    public FloatVariable Variable;
-
-    public float Value
+    [Serializable]
+    public class FloatReference
     {
-        get
+        public bool UseConstant = true;
+        public float ConstantValue;
+        public FloatVariable Variable;
+
+        public float Value
         {
-            return UseConstant ? ConstantValue : Variable.Value;
+            get
+            {
+                return UseConstant ? ConstantValue : Variable.Value;
+            }
         }
-    }
+    } 
 }

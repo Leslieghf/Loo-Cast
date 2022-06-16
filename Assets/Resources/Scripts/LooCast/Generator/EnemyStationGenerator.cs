@@ -6,6 +6,7 @@ namespace LooCast.Generator
 {
     using Random;
     using Station;
+    using Data.Station;
 
     public class EnemyStationGenerator : Generator
     {
@@ -26,7 +27,6 @@ namespace LooCast.Generator
                 Vector2 potentialSpawnPosition = Random.InsideUnitCircle() * 500.0f;
                 GameObject stationObject = Instantiate(prefab, potentialSpawnPosition, Quaternion.identity, null);
                 EnemyStation station = stationObject.GetComponent<EnemyStation>();
-                station.Initialize();
             }
         }
     } 

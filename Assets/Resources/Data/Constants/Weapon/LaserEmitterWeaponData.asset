@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bbf29b4ae7de7e409d1a9837a8543bc, type: 3}
+  m_Name: LaserEmitterWeaponData
+  m_EditorClassIdentifier: 
+  BaseDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ad84737162562c14aa538c67c9966365, type: 2}
+  BaseCritChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 73819fa2337c2684a9293de3369a01a2, type: 2}
+  BaseCritDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 41fea626906574f43bffd03cffe9cfa7, type: 2}
+  BaseKnockback:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 2f880cd43a1aa9f48b401317e4e28329, type: 2}
+  BaseAttackDelay:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c90935154c120d64bb11bdd53e05f629, type: 2}
+  BaseProjectileSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 1ea215e6026bfe2468e25633fb8de818, type: 2}
+  BaseProjectileSize:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: f312d589ca37f064c82c19bf43e01bfc, type: 2}
+  BaseProjectileLifetime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a3121e3aff6868748ac47def505578a1, type: 2}
+  BasePiercing:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ea0cf11702df66f469ce66e84828cacd, type: 2}
+  BaseArmorPenetration:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b059ce0cc2673514aa8c91458853aa6e, type: 2}
+  ProjectilePrefabResourcePath:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: cf3f0a38ca5867d43af72f6c89cc9fa5, type: 2}
+  LaserLength:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 871eafba413ccf3469f770d1ab0ebce1, type: 2}

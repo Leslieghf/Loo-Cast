@@ -7,33 +7,28 @@ namespace LooCast.Station
 {
     using Util;
     using Health;
-    using Attribute.Stat;
+    using Data.Station;
+    using Data.Runtime;
 
     [RequireComponent(typeof(StationHealth)), DisallowMultipleComponent]
     public abstract class Station : ExtendedMonoBehaviour
     {
-        public readonly static List<Station> stations = new List<Station>();
-        public StationHealth Health { get; private set; }
+        public StationHealth Health { get; protected set; }
 
-        protected float baseMaxHealth = 10000.0f;
-        protected float baseRegeneration = 100.0f;
-        protected int baseDefense = 500;
+        [SerializeField]
+        private StationRuntimeSet runtimeSet;
 
-        public virtual void Initialize()
+        public virtual void Initialize<StationHealthType>(StationData data) where StationHealthType : StationHealth
         {
-            stations.Add(this);
+            runtimeSet.Add(this);
 
-            Health = GetComponent<StationHealth>();
-            Health.Initialize(
-                maxHealth: baseMaxHealth,
-                regenerationAmount: baseRegeneration,
-                defense: baseDefense
-                );
+            Health = GetComponent<StationHealthType>();
+            Health.Initialize(data.BaseMaxHealth.Value, data.BaseRegeneration.Value, data.BaseDefense.Value);
         }
 
         public virtual void Kill()
         {
-            stations.Remove(this);
+            runtimeSet.Remove(this);
             Destroy(gameObject);
         }
     } 

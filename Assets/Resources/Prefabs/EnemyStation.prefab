@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: -3853080843633908785}
   - component: {fileID: 2771602513370510851}
   - component: {fileID: 3016905653400388265}
-  - component: {fileID: -3004764847457724030}
+  - component: {fileID: 513302948714513589}
   m_Layer: 12
   m_Name: EnemyStation
   m_TagString: EnemyStation
@@ -285,7 +285,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30e7a65bdfb63164cae8c231f923e9cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3004764847457724030
+  runtimeSet: {fileID: 11400000, guid: c9d187e318d873e48a323f601526b924, type: 2}
+  stationData: {fileID: 11400000, guid: 0349686f1975a8a4d946575955a18465, type: 2}
+--- !u!114 &513302948714513589
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,7 +296,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3016905653400388266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3429f5b89d81da4b9c636a016e6c1d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 8808eedc61682a6458be9e742a72b78e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onKilled:

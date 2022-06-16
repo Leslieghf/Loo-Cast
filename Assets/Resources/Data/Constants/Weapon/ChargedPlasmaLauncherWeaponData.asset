@@ -1,0 +1,162 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfec071db664002438bc9add6560ef50, type: 3}
+  m_Name: ChargedPlasmaLauncherWeaponData
+  m_EditorClassIdentifier: 
+  BaseDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: f88cb60162d876140ba602f2edef924e, type: 2}
+  BaseCritChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: bedf8b62085587a468151b7cd4affbc2, type: 2}
+  BaseCritDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b806759c2c9d9a649ad35d21f757fd94, type: 2}
+  BaseKnockback:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 66004aa140a14e845a1f03649f1458b5, type: 2}
+  BaseAttackDelay:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 6be0e1f3d117a26419aa8810fc06699c, type: 2}
+  BaseProjectileSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9448631fcc9549c4abe2b3866764d177, type: 2}
+  BaseProjectileSize:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 6c359cb033b83854c8af03012dbdfb90, type: 2}
+  BaseProjectileLifetime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 4e419b3f1e5bd5c4a970c9933340b7e3, type: 2}
+  BasePiercing:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 43e12167fac22a144bbe1c993905b8ba, type: 2}
+  BaseArmorPenetration:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: cd9f73d71f6b62a4fbe274464ee9c66d, type: 2}
+  ProjectilePrefabResourcePath:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: d856d10bfba348345a288ed42170f431, type: 2}
+  ArcLifetime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3b62d191697276241a1075f70dd8de35, type: 2}
+  ArcInitialWidth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b1abd5fd6711b694fa27986b4920985c, type: 2}
+  ArcWidthMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9096b56ba9bf2ab4a81872cb4f88aaa3, type: 2}
+  ArcMinWidth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3d6329d5a9f54a84fa64880729bf585a, type: 2}
+  ArcBranchAttempts:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7307fbeaa5cd55d4eb4588446202501e, type: 2}
+  MinSpreadDistance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9ac2d8911f2d0e24fa89bea64648e502, type: 2}
+  MinSpreadDistanceMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 15f3a8d0462cded47ab00d733cec2954, type: 2}
+  MaxSpreadDistance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 2e5af1bbcfdae3a4e86615374d7a9383, type: 2}
+  MaxSpreadDistanceMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a16df720f9105cc4f865edd284bc9556, type: 2}
+  MinSpreadAngle:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 478ff1735b3a0bf438bc7562419dd366, type: 2}
+  MinSpreadAngleMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 95b18354cae9d914d9f78a28fccacca5, type: 2}
+  MaxSpreadAngle:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3fb8fc89e9c2df04d8baa37e9f1e77af, type: 2}
+  MaxSpreadAngleMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9ae8e56fe57400c42953e40a19ec9579, type: 2}
+  SpreadChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9da9f990d5f6b394eaae8512db48db04, type: 2}
+  SpreadChanceMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: cf73d9b613e4c754a9001c282334cb06, type: 2}
+  MinBranchDistance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 4b6d3f56d4889864c96dfb4da4a58a0a, type: 2}
+  MinBranchDistanceMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ae4300a277a2a8d48badd7c802e4eb3b, type: 2}
+  MaxBranchDistance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 22a1bda791dbb3142bde811487abad1c, type: 2}
+  MaxBranchDistanceMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 9682f0225a3957347a3a25041b8b8ad8, type: 2}
+  MinBranchAngle:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b828b894d2716a944b88b849963a18dc, type: 2}
+  MinBranchAngleMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ba69761e4b8be5c4da64122022b5acc3, type: 2}
+  MaxBranchAngle:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a725ff33a2335874db4d21b58aa2e94c, type: 2}
+  MaxBranchAngleMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: e46337cc5264e6749bb902468701993e, type: 2}
+  BranchChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 1a52a64556c7cec4fb0a9a6a74858742, type: 2}
+  BranchChanceMultiplier:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 10146f8a29d778242987459614ff309e, type: 2}
+  MaxRecursionDepth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 83d8980b0599e5c48b31e240b6694390, type: 2}

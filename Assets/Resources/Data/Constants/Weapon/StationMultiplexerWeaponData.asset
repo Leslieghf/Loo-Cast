@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e45fb47ba3f64498a6d19e4def6571, type: 3}
+  m_Name: StationMultiplexerWeaponData
+  m_EditorClassIdentifier: 
+  BaseDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 25afe8b077610b545a78900399c10e28, type: 2}
+  BaseCritChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 8a2d7c47a9acc164488f8989b8be5327, type: 2}
+  BaseCritDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: db850a828c2b99245a7528f9c6106337, type: 2}
+  BaseKnockback:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 312cc7ccd01816948ba5d7bf4d63195d, type: 2}
+  BaseAttackDelay:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: bbc77af83e78ea74ca6355dd175730e9, type: 2}
+  BaseProjectileSpeed:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: e5fcaffd664ebf14c948ead56694f6d7, type: 2}
+  BaseProjectileSize:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a9818d336be71a246a260e625ba077ed, type: 2}
+  BaseProjectileLifetime:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b47528b5302a2f54c83ad68d912a3c56, type: 2}
+  BasePiercing:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b19c19e722e21fe4bb65e86a69d3a407, type: 2}
+  BaseArmorPenetration:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: a6b1bc8f04767cf4fb889e694cad967c, type: 2}
+  ProjectilePrefabResourcePath:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 75e02e2d53d5a40408295448f4a16ea0, type: 2}
+  BaseMaxTargets:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 34c3887e524de6141a667a5fd844330f, type: 2}
+  BaseMaxFragments:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 32e8c2939c73c6c4ead1b89e421cd075, type: 2}
+  BaseFragmentArmorPenetration:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 7847a09e1dcb64048b98926ba5ea136d, type: 2}
+  IsTargetSeeking:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 11a7bb86bffe9394ebe08030e58c4295, type: 2}
+  FragmentPrefabResourcePath:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: e3d99b7d460c9b542b6519eed6e751b4, type: 2}

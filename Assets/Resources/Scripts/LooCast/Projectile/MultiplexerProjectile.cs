@@ -17,10 +17,10 @@ namespace LooCast.Projectile
         protected GameObject fragmentPrefab;
         protected GameSoundHandler soundHandler;
 
-        public virtual void Initialize(Target target, GameObject origin, float damage, float critChance, float critDamage, float knockback, float speed, float size, float lifetime, int piercing, int armorPenetration, int fragments, int fragmentArmorPenetration, bool followTarget)
+        public virtual void Initialize(Target target, GameObject origin, float damage, float critChance, float critDamage, float knockback, float speed, float size, float lifetime, int piercing, int armorPenetration, int fragments, int fragmentArmorPenetration, bool followTarget, GameObject fragmentPrefab)
         {
             base.Initialize(target, origin, damage, critChance, critDamage, knockback, speed, size, lifetime, piercing, armorPenetration);
-            fragmentPrefab = Resources.Load<GameObject>("Prefabs/MultiplexerFragmentProjectile");
+            this.fragmentPrefab = fragmentPrefab;
             soundHandler = FindObjectOfType<GameSoundHandler>();
             this.fragments = fragments;
             this.fragmentArmorPenetration = fragmentArmorPenetration;
@@ -99,14 +99,7 @@ namespace LooCast.Projectile
                     Kill(collision);
                     return;
                 }
-                if (System.Console.ReadKey().KeyChar.Equals('y'))
-                {
-                    //banana
-                }
-                else if (System.Console.ReadKey().KeyChar.Equals('n'))
-                {
-                    //no banana
-                }
+                
                 pierced += 1;
                 Health collisionHealth = collision.gameObject.GetComponentInParent<Health>();
                 collisionHealth.Damage(new DamageInfo(origin, gameObject, damage * Random.Range(2.5f, 5.0f), knockback, armorPenetration));
@@ -116,6 +109,11 @@ namespace LooCast.Projectile
                 {
                     Kill(collision);
                     return;
+                }
+
+                if (CheckTags("EnemyStation"))
+                {
+                    Kill();
                 }
             }
         }

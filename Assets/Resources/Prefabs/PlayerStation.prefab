@@ -299,7 +299,7 @@ GameObject:
   - component: {fileID: 8691153600831653640}
   - component: {fileID: 1748179788959358906}
   - component: {fileID: 763854818110676721}
-  - component: {fileID: -1920722295117260215}
+  - component: {fileID: 513973484690270647}
   - component: {fileID: 763854818110676720}
   - component: {fileID: 763854818110676727}
   m_Layer: 11
@@ -389,7 +389,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b6354ca905d0f46890650b362173be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-1920722295117260215
+  runtimeSet: {fileID: 11400000, guid: c9d187e318d873e48a323f601526b924, type: 2}
+  stationData: {fileID: 11400000, guid: 81dbb1346ac019b46b33db3194cc7ae7, type: 2}
+  defensiveMultiplexerWeaponData: {fileID: 11400000, guid: 2f8173599f013514280722e88d36a88e, type: 2}
+--- !u!114 &513973484690270647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -398,7 +401,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 763854818110676724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3429f5b89d81da4b9c636a016e6c1d1, type: 3}
+  m_Script: {fileID: 11500000, guid: 033ec13bba84de5448a2f3a7471ae63f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onKilled:
@@ -416,8 +419,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8b2aec9e4d68a64f8e80faddcd221b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0
-  targetTags: []
+  radius: 25
+  targetTags:
+  - Enemy
   drawGizmos: 1
 --- !u!114 &763854818110676727
 MonoBehaviour:

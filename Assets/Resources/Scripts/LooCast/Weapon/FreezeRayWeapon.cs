@@ -1,35 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Util;
 using LooCast.AOE;
-using LooCast.Target;
-using LooCast.Sound;
-using LooCast.Attribute.Stat;
 
 namespace LooCast.Weapon
 {
     using Target;
+    using Data.Weapon;
 
     public class FreezeRayWeapon : Weapon
     {
-        public new void Initialize
-            (
-            float baseDamage = 0.0f,
-            float baseCritChance = 0.0f,
-            float baseCritDamage = 0.0f,
-            float baseKnockback = 0.0f,
-            float baseAttackDelay = 20.0f,
-            float baseProjectileSpeed = 100.0f,
-            float baseProjectileSize = 1.0f,
-            float baseProjectileLifetime = 5.0f,
-            int basePiercing = 0,
-            int baseArmorPenetration = 0
-            )
+        public void Initialize(FreezeRayWeaponData data)
         {
-            base.Initialize(baseDamage, baseCritChance, baseCritDamage, baseKnockback, baseAttackDelay, baseProjectileSpeed, baseProjectileSize, baseProjectileLifetime, basePiercing, baseArmorPenetration);
-
-            prefab = Resources.Load<GameObject>("Prefabs/FreezeZone");
+            base.Initialize(data);
         }
 
         public override bool TryFire()
@@ -43,11 +26,11 @@ namespace LooCast.Weapon
                 }
                 Target target = targets[0];
 
-                var freezeOrbObject = Instantiate(prefab, transform.position, Quaternion.identity);
+                var freezeOrbObject = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
                 freezeOrbObject.transform.position += new Vector3(0, 0, 0.1f);
                 var freezeSpeedMultiplier = 0.5f;
                 var freezeRadiusMultiplier = projectileSize;
-                var freezeLifetime = projectileLifetime;
+                var freezeLifetime = baseProjectileLifetime;
                 freezeOrbObject.GetComponent<FreezeZone>().Initialize(target.transform.position, freezeSpeedMultiplier, freezeRadiusMultiplier, freezeLifetime);
                 soundHandler.SoundShoot();
 

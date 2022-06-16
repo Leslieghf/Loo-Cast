@@ -56,6 +56,11 @@ namespace LooCast.Projectile
                     return;
                 }
             }
+
+            if (CheckTags("EnemyStation"))
+            {
+                Kill();
+            }
         }
 
         protected override void OnLostTarget()

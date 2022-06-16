@@ -13,6 +13,7 @@ namespace LooCast.Player
     using Currency;
     using Experience;
     using Attribute.Stat;
+    using Data.Weapon;
 
     [RequireComponent(typeof(PlayerHealth), typeof(Targeting), typeof(PlayerMovement)), DisallowMultipleComponent]
     public class Player : ExtendedMonoBehaviour
@@ -27,6 +28,11 @@ namespace LooCast.Player
         protected float baseMaxHealth = 100.0f;
         protected float baseRegeneration = 5.0f;
         protected int baseDefense = 0;
+
+        public MultiplexerWeaponData multiplexerWeaponData;
+        public LaserEmitterWeaponData laserEmitterWeaponData;
+        public FreezeRayWeaponData freezeRayWeaponData;
+        public ChargedPlasmaLauncherWeaponData chargedPlasmaLauncherWeaponData;
 
         public virtual void Initialize()
         {
@@ -44,25 +50,25 @@ namespace LooCast.Player
             Weapons = new Dictionary<string, Weapon>();
 
             MultiplexerWeapon multiplexerWeapon = gameObject.AddComponent<MultiplexerWeapon>();
-            multiplexerWeapon.Initialize();
+            multiplexerWeapon.Initialize(multiplexerWeaponData);
             multiplexerWeapon.enabled = true;
             multiplexerWeapon.attackTimer = multiplexerWeapon.attackDelay;
             Weapons.Add("MultiplexerWeapon", multiplexerWeapon);
 
             LaserEmitterWeapon laserEmitterWeapon = gameObject.AddComponent<LaserEmitterWeapon>();
-            laserEmitterWeapon.Initialize();
+            laserEmitterWeapon.Initialize(laserEmitterWeaponData);
             laserEmitterWeapon.enabled = true;
             laserEmitterWeapon.attackTimer = laserEmitterWeapon.attackDelay;
             Weapons.Add("LaserEmitterWeapon", laserEmitterWeapon);
 
             FreezeRayWeapon freezeRayWeapon = gameObject.AddComponent<FreezeRayWeapon>();
-            freezeRayWeapon.Initialize();
+            freezeRayWeapon.Initialize(freezeRayWeaponData);
             freezeRayWeapon.enabled = true;
             freezeRayWeapon.attackTimer = freezeRayWeapon.attackDelay;
             Weapons.Add("FreezeRayWeapon", freezeRayWeapon);
 
             ChargedPlasmaLauncherWeapon chargedPlasmaLauncherWeapon = gameObject.AddComponent<ChargedPlasmaLauncherWeapon>();
-            chargedPlasmaLauncherWeapon.Initialize();
+            chargedPlasmaLauncherWeapon.Initialize(chargedPlasmaLauncherWeaponData);
             chargedPlasmaLauncherWeapon.enabled = true;
             chargedPlasmaLauncherWeapon.attackTimer = chargedPlasmaLauncherWeapon.attackDelay;
             Weapons.Add("ChargedPlasmaLauncherWeapon", chargedPlasmaLauncherWeapon);
