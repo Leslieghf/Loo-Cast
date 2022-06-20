@@ -4,56 +4,19 @@ using UnityEngine.Events;
 namespace LooCast.Health
 {
     using Util;
+    using Random;
+    using Attribute.Stat;
 
-    public class Health : ExtendedMonoBehaviour
+    public abstract class Health : ExtendedMonoBehaviour
     {
-        protected float health
-        {
-            get
-            {
-                return GetHealth();
-            }
-
-            set
-            {
-                SetHealth(value);
-            }
-        }
-        protected float _health;
-        protected float maxHealth
-        {
-            get
-            {
-                return GetMaxHealth();
-            }
-
-            set
-            {
-                SetMaxHealth(value);
-            }
-        }
-        protected float _maxHealth;
-
-        protected float regenerationAmount
-        {
-            get
-            {
-                return GetRegenerationAmount();
-            }
-
-            set
-            {
-                SetRegenerationAmount(value);
-            }
-        }
-        protected float _regenerationAmount;
-
-
+        protected float health;
+        protected float maxHealth;
+        protected float regenerationAmount;
         protected float regenerationTime;
         protected float regenerationTimer;
+        protected int defense;
 
         protected bool isAlive = true;
-        protected int defense;
         public UnityEvent onKilled;
 
         public virtual void Initialize(float maxHealth, float regenerationAmount, int defense)
@@ -88,6 +51,7 @@ namespace LooCast.Health
                 PlayerPrefs.SetFloat("Difficulty", 1.0f);
             }
             difficulty = PlayerPrefs.GetFloat("Difficulty");
+
             float damage = damageInfo.damage;
             float defense = this.defense * difficulty;
             if (damageInfo.armorPenetration >= defense)
@@ -129,29 +93,29 @@ namespace LooCast.Health
 
         protected virtual float GetHealth()
         {
-            return _health;
+            return health;
         }
         protected virtual void SetHealth(float health)
         {
-            _health = health;
+            this.health = health;
         }
 
         protected virtual float GetMaxHealth()
         {
-            return _maxHealth;
+            return maxHealth;
         }
         protected virtual void SetMaxHealth(float maxHealth)
         {
-            _maxHealth = maxHealth;
+            this.maxHealth = maxHealth;
         }
 
         protected virtual float GetRegenerationAmount()
         {
-            return _regenerationAmount;
+            return regenerationAmount;
         }
         protected virtual void SetRegenerationAmount(float regenerationAmount)
         {
-            _regenerationAmount = regenerationAmount;
+            this.regenerationAmount = regenerationAmount;
         }
     } 
 }

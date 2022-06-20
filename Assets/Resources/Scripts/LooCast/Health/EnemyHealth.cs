@@ -59,17 +59,14 @@ namespace LooCast.Health
 
         public override void Damage(DamageInfo damageInfo)
         {
-            if (Random.Range(0.0f, 1.0f) < 0.1f * ((ChanceStat)Stats.GetStat("ChanceStat")).randomChanceMultiplier)
+            if (Random.Range(0.0f, 1.0f) < 0.1f * Stats.randomChanceMultiplier)
             {
                 damageInfo.damage *= 5.0f;
             }
 
-            damageInfo.damage *= ((MightStat)Stats.GetStat("MightStat")).damageMultiplier;
-
             base.Damage(damageInfo);
 
             Vector2 worldPos = new Vector2(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f));
-
             GameObject damageIndicator = Instantiate(Resources.Load<GameObject>("Prefabs/DamageIndicator"), worldPos, Quaternion.identity, canvas.transform);
             damageIndicator.GetComponent<DamageIndicator>().Initialize(damageInfo.damage);
 
