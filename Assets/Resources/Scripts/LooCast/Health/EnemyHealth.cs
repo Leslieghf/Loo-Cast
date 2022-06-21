@@ -5,16 +5,14 @@ using UnityEngine.Events;
 
 namespace LooCast.Health
 {
-    using Indicator;
     using Random;
     using Orb;
     using Sound;
-    using UI.Canvas;
+    using Data.Health;
     using Attribute.Stat;
 
     public class EnemyHealth : Health
     {
-        protected WorldSpaceCanvas canvas;
         protected GameSoundHandler soundHandler;
         protected float magnetDropChance;
         protected float xpDropChance;
@@ -22,11 +20,10 @@ namespace LooCast.Health
         protected GameObject magnetOrbPrefab;
 
 
-        public override void Initialize(float maxHealth, float regenerationAmount, int defense)
+        public void Initialize(EnemyHealthData data)
         {
-            base.Initialize(maxHealth: maxHealth, regenerationAmount: regenerationAmount, defense: defense);
+            base.Initialize(data);
 
-            canvas = FindObjectOfType<WorldSpaceCanvas>();
             soundHandler = FindObjectOfType<GameSoundHandler>();
             magnetDropChance = 1.0f * Stats.randomChanceMultiplier;
             xpDropChance = 100.0f * Stats.randomChanceMultiplier;
@@ -59,23 +56,10 @@ namespace LooCast.Health
 
         public override void Damage(DamageInfo damageInfo)
         {
-            if (Random.Range(0.0f, 1.0f) < 0.1f * Stats.randomChanceMultiplier)
-            {
-                damageInfo.damage *= 5.0f;
-            }
-
             base.Damage(damageInfo);
 
-            Vector2 worldPos = new Vector2(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f));
-            GameObject damageIndicator = Instantiate(Resources.Load<GameObject>("Prefabs/DamageIndicator"), worldPos, Quaternion.identity, canvas.transform);
-            damageIndicator.GetComponent<DamageIndicator>().Initialize(damageInfo.damage);
-
-            Vector3 knockbackDirection = damageInfo.origin.transform.position - transform.position;
-            if (damageInfo.knockback != 0.0f)
-            {
-                GetComponent<Rigidbody2D>().AddForce(knockbackDirection.normalized * -250f * damageInfo.knockback, ForceMode2D.Impulse);
-            }
-            
+            Knockback(damageInfo);
+            IndicateDamage(damageInfo);
             soundHandler.SoundHit();
         }
     } 

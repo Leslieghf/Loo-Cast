@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d99887d534fb1bf47b1b92a304ecd689, type: 3}
+  m_Name: EnemyData
+  m_EditorClassIdentifier: 
+  HealthData: {fileID: 11400000, guid: a27041d102f89e64a9b270121aac6310, type: 2}
+  ContactDamage:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 3405a1bdbd630f741b6b4a1b0ea965ce, type: 2}

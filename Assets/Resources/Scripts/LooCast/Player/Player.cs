@@ -14,10 +14,14 @@ namespace LooCast.Player
     using Experience;
     using Attribute.Stat;
     using Data.Weapon;
+    using Data.Player;
+    using Data.Health;
 
     [RequireComponent(typeof(PlayerHealth), typeof(Targeting), typeof(PlayerMovement)), DisallowMultipleComponent]
     public class Player : ExtendedMonoBehaviour
     {
+        public PlayerData data;
+
         public PlayerHealth Health { get; private set; }
         public Targeting Targeting { get; private set; }
         public Experience Experience { get; private set; }
@@ -34,14 +38,10 @@ namespace LooCast.Player
         public FreezeRayWeaponData freezeRayWeaponData;
         public ChargedPlasmaLauncherWeaponData chargedPlasmaLauncherWeaponData;
 
-        public virtual void Initialize()
+        private void Start()
         {
             Health = GetComponent<PlayerHealth>();
-            Health.Initialize(
-                maxHealth: baseMaxHealth * Stats.healthMultiplier,
-                regenerationAmount: baseRegeneration * Stats.healthRegenrationMultiplier,
-                defense: baseDefense + Stats.defenseIncrease
-                );
+            Health.Initialize(data.healthData);
 
             Targeting = GetComponent<Targeting>();
             Targeting.Initialize();

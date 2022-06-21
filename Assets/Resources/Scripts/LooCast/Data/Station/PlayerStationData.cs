@@ -5,6 +5,8 @@ using UnityEngine;
 
 namespace LooCast.Data.Station
 {
+    using Health;
+
     [CreateAssetMenu(fileName = "PlayerStationData", menuName = "Data/Station/PlayerStationData", order = 0)]
     public class PlayerStationData : StationData
     {

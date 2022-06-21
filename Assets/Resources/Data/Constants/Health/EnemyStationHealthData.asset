@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d76a6690c6c3ab46bbe3d4e1a348f38, type: 3}
+  m_Name: EnemyStationHealthData
+  m_EditorClassIdentifier: 
+  BaseMaxHealth:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: b55229490ec85284aa69e9f09701f7c8, type: 2}
+  BaseRegenerationAmount:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 13ad90df696909d4384ad4009b396f4e, type: 2}
+  BaseDefense:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: ae170e45007a6e54bbdfb799179d0516, type: 2}
+  BaseExperienceDropChance:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 319db6e447a15e34d9ea9cdf2f688959, type: 2}
+  BaseExperienceDropAmount:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 08656408a6bd98b428c05453d6ff199b, type: 2}
+  ExperienceOrbPrefab: {fileID: 8036678909911672808, guid: 4b1459495291ffe4cb0c9150eff61965, type: 3}

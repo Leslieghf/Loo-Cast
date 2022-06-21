@@ -12,18 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7870cfdd280f5be40ad9b6479f1c25fe, type: 3}
   m_Name: PlayerStationData
   m_EditorClassIdentifier: 
-  BaseMaxHealth:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: b721cf5c40d130d4eb6c0588d433cf3c, type: 2}
-  BaseRegeneration:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 8ebc175a751413243a03c6faeb86196f, type: 2}
-  BaseDefense:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 9a8e8a930dc68f94e92a569a861d13a0, type: 2}
+  HealthData: {fileID: 11400000, guid: 2929a694c2807f5469bd9a51175f3a49, type: 2}
   TargetingRadius:
     UseConstant: 0
     ConstantValue: 0

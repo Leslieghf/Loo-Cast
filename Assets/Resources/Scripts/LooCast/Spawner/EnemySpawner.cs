@@ -33,7 +33,6 @@ namespace LooCast.Spawner
                 spawnTimer = 0.0f;
                 GameObject spawnedObject = Instantiate(prefab, (Vector3)(UnityEngine.Random.insideUnitCircle * 50.0f) + transform.position, Quaternion.identity, null);
                 Enemy spawnedEnemy = spawnedObject.GetComponent<Enemy>();
-                spawnedEnemy.Initialize();
                 spawnedEnemies.Add(spawnedEnemy);
                 spawnedEnemy.onKilled.AddListener( () => { spawnedEnemies.Remove(spawnedEnemy); } );
             }

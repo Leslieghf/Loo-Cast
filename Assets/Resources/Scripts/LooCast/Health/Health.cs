@@ -5,7 +5,9 @@ namespace LooCast.Health
 {
     using Util;
     using Random;
-    using Attribute.Stat;
+    using Indicator;
+    using UI.Canvas;
+    using Data.Health;
 
     public abstract class Health : ExtendedMonoBehaviour
     {
@@ -19,18 +21,22 @@ namespace LooCast.Health
         protected bool isAlive = true;
         public UnityEvent onKilled;
 
-        public virtual void Initialize(float maxHealth, float regenerationAmount, int defense)
+        protected WorldSpaceCanvas canvas;
+
+        public void Initialize(HealthData data)
         {
-            this.maxHealth = maxHealth;
+            maxHealth = data.BaseMaxHealth.Value;
             health = maxHealth;
 
-            this.regenerationAmount = regenerationAmount;
+            regenerationAmount = data.BaseRegenerationAmount.Value;
             regenerationTime = 1.0f;
             regenerationTimer = 0.0f;
 
-            this.defense = defense;
+            defense = data.BaseDefense.Value;
 
             onKilled = new UnityEvent();
+
+            canvas = FindObjectOfType<WorldSpaceCanvas>();
         }
 
         protected override void Cycle()
@@ -45,15 +51,19 @@ namespace LooCast.Health
 
         public virtual void Damage(DamageInfo damageInfo)
         {
-            float difficulty;
-            if (!PlayerPrefs.HasKey("Difficulty"))
+            bool TryCriticalStrike(ref DamageInfo refDamageInfo)
             {
-                PlayerPrefs.SetFloat("Difficulty", 1.0f);
+                if (Random.Range(0.0f, 1.0f) < refDamageInfo.critChance)
+                {
+                    refDamageInfo.damage = refDamageInfo.critDamage;
+                    return true;
+                }
+                return false;
             }
-            difficulty = PlayerPrefs.GetFloat("Difficulty");
 
-            float damage = damageInfo.damage;
-            float defense = this.defense * difficulty;
+            TryCriticalStrike(ref damageInfo);
+
+            float defense = this.defense;
             if (damageInfo.armorPenetration >= defense)
             {
                 defense = 0;
@@ -62,18 +72,26 @@ namespace LooCast.Health
             {
                 defense -= damageInfo.armorPenetration;
             }
-            damage -= defense;
-            if (damage <= 0)
+
+            damageInfo.damage -= defense;
+            if (damageInfo.damage <= 0)
             {
                 return;
             }
 
-            health -= damage;
+            health -= damageInfo.damage;
             if (health <= 0)
             {
                 health = 0;
                 Kill();
             }
+        }
+
+        public virtual void IndicateDamage(DamageInfo damageInfo)
+        {
+            Vector2 worldPos = new Vector2(transform.position.x + Random.Range(-0.5f, 0.5f), transform.position.y + Random.Range(-0.5f, 0.5f));
+            GameObject damageIndicator = Instantiate(Resources.Load<GameObject>("Prefabs/DamageIndicator"), worldPos, Quaternion.identity, canvas.transform);
+            damageIndicator.GetComponent<DamageIndicator>().Initialize(damageInfo.damage);
         }
 
         public virtual void Heal(float health)
@@ -89,6 +107,19 @@ namespace LooCast.Health
         {
             isAlive = false;
             onKilled.Invoke();
+        }
+
+        public virtual void Knockback(DamageInfo damageInfo)
+        {
+            if (damageInfo.knockback != 0.0f)
+            {
+                Vector3 knockbackDirection = damageInfo.origin.transform.position - transform.position;
+                Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+                if (rigidbody != null)
+                {
+                    rigidbody.AddForce(knockbackDirection.normalized * -250f * damageInfo.knockback, ForceMode2D.Impulse); 
+                }
+            }
         }
 
         protected virtual float GetHealth()

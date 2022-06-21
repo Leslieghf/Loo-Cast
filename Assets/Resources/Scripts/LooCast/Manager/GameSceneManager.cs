@@ -79,7 +79,6 @@ namespace LooCast.Manager
             worldSpaceCanvas.Initialize();
             background.Initialize();
             soundHandler.Initialize();
-            player.Initialize();
             screenShake.Initialize();
             gameCanvas.Initialize();
             generators.Initialize();

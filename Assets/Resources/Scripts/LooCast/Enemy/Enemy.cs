@@ -13,11 +13,15 @@ namespace LooCast.Enemy
     using Health;
     using Target;
     using Experience;
+    using Data.Enemy;
+    using Data.Health;
 
     [RequireComponent(typeof(Movement), typeof(EnemyHealth)), DisallowMultipleComponent]
     public abstract class Enemy : ExtendedMonoBehaviour
     {
         public readonly static List<Enemy> enemies = new List<Enemy>();
+
+        public EnemyData data;
 
         public Experience playerExperience { get; private set; }
         public new ParticleSystem particleSystem { get; private set; }
@@ -26,16 +30,8 @@ namespace LooCast.Enemy
         public Targeting playerTargeting { get; private set; }
         public UnityEvent onKilled { get; private set; }
 
-        protected float baseMaxHealth = 100.0f;
-        protected float baseRegeneration = 0.0f;
-        protected int baseDefense = 0;
-        protected float contactDamage = 50.0f;
-        protected float contactKnockback = 0.0f;
 
-        
-
-
-        public virtual void Initialize()
+        private void Start()
         {
             enemies.Add(this);
 
@@ -50,11 +46,7 @@ namespace LooCast.Enemy
             movement.onMovementEnabled.AddListener(particleSystem.ResumeParticleSpawning);
 
             health = GetComponent<EnemyHealth>();
-            health.Initialize(
-                maxHealth: baseMaxHealth * (1 + (playerExperience.level / 10.0f)),
-                regenerationAmount: baseRegeneration,
-                defense: baseDefense
-                );
+            health.Initialize(data.HealthData);
             health.onKilled.AddListener(Kill);
 
             playerTargeting = GameSceneManager.Instance.Player.Targeting;
@@ -81,7 +73,7 @@ namespace LooCast.Enemy
                     PlayerPrefs.SetFloat("Difficulty", 1.0f);
                 }
                 difficulty = PlayerPrefs.GetFloat("Difficulty");
-                playerHealth.Damage(new DamageInfo(collision.gameObject, collision.gameObject, contactDamage * difficulty, contactKnockback * difficulty, 0));
+                playerHealth.Damage(new DamageInfo(collision.gameObject, collision.gameObject, data.ContactDamage.Value * difficulty, 0, 0, 0, 0));
             }
         }
     } 

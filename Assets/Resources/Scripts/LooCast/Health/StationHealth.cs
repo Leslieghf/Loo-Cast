@@ -5,26 +5,19 @@ using UnityEngine.Events;
 
 namespace LooCast.Health
 {
-    using Random;
     using Sound;
     using UI.Canvas;
-    using Attribute.Stat;
     using Manager;
+    using Data.Health;
 
     public class StationHealth : Health
     {
-        protected WorldSpaceCanvas canvas;
         protected GameSoundHandler soundHandler;
 
-        public override void Initialize(float baseMaxHealth, float baseRegenerationAmount, int baseDefense)
+        public void Initialize(StationHealthData data)
         {
-            base.Initialize(
-                maxHealth: baseMaxHealth,
-                regenerationAmount: baseRegenerationAmount,
-                defense: baseDefense
-                );
+            base.Initialize(data);
 
-            canvas = FindObjectOfType<WorldSpaceCanvas>();
             soundHandler = FindObjectOfType<GameSoundHandler>();
         }
 

@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cc1564dc4579243ba9fb396ed336df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 1d075a340614ef54991d174e04cd5661, type: 2}
   multiplexerWeaponData: {fileID: 11400000, guid: 293cede1177f1cb44ac6912280fde994, type: 2}
   laserEmitterWeaponData: {fileID: 11400000, guid: fe9ca805e9c1e6b47a66e8a0b61088ae, type: 2}
   freezeRayWeaponData: {fileID: 11400000, guid: 4c1a0ddd11b7ba749bf107b08aaccf41, type: 2}
@@ -9486,7 +9487,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27b861a94d2ee754b83e3fe9adb79825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stationData: {fileID: 11400000, guid: 0349686f1975a8a4d946575955a18465, type: 2}
 --- !u!1 &1465937271
 GameObject:
   m_ObjectHideFlags: 0

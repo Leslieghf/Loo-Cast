@@ -11,14 +11,18 @@ namespace LooCast.Health
         public float damage { get; set; }
         public float knockback { get; set; }
         public int armorPenetration { get; set; }
+        public float critChance { get; set; }
+        public float critDamage { get; set; }
 
-        public DamageInfo(GameObject origin, GameObject carrier, float damage, float knockback, int armorPenetration)
+        public DamageInfo(GameObject origin, GameObject carrier, float damage, float knockback, int armorPenetration, float critChance, float critDamage)
         {
             this.origin = origin;
             this.carrier = carrier;
             this.damage = damage;
             this.knockback = knockback;
             this.armorPenetration = armorPenetration;
+            this.critChance = critChance;
+            this.critDamage = critDamage;
         }
     } 
 }

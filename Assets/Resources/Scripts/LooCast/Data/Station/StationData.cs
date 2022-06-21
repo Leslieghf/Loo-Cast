@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace LooCast.Data.Station
 {
+    using Health;
+
     public class StationData : ScriptableObject
     {
-        public FloatReference BaseMaxHealth;
-        public FloatReference BaseRegeneration;
-        public IntReference BaseDefense;
+        public StationHealthData HealthData;
     } 
 }

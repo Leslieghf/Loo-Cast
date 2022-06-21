@@ -7,6 +7,7 @@ namespace LooCast.Station
 {
     using Util;
     using Health;
+    using Data.Health;
     using Data.Station;
     using Data.Runtime;
 
@@ -23,7 +24,7 @@ namespace LooCast.Station
             runtimeSet.Add(this);
 
             Health = GetComponent<StationHealthType>();
-            Health.Initialize(data.BaseMaxHealth.Value, data.BaseRegeneration.Value, data.BaseDefense.Value);
+            (Health as StationHealthType).Initialize(data.HealthData);
         }
 
         public virtual void Kill()

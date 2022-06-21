@@ -7,6 +7,7 @@ namespace LooCast.Health
     using Random;
     using Orb;
     using Attribute.Stat;
+    using Data.Health;
 
     public class EnemyStationHealth : StationHealth
     {
@@ -14,13 +15,13 @@ namespace LooCast.Health
         protected float experienceDropAmount;
         protected GameObject experienceOrbPrefab;
 
-        public void Initialize(float baseMaxHealth, float baseRegenerationAmount, int baseDefense, float baseExperienceDropChance, float baseExperienceDropAmount, GameObject experienceOrbPrefab)
+        public void Initialize(EnemyStationHealthData data)
         {
-            base.Initialize(maxHealth, regenerationAmount, defense);
+            base.Initialize(data);
 
-            experienceDropChance = baseExperienceDropChance;
-            experienceDropAmount = baseExperienceDropAmount;
-            this.experienceOrbPrefab = experienceOrbPrefab;
+            experienceDropChance = data.BaseExperienceDropChance.Value;
+            experienceDropAmount = data.BaseExperienceDropAmount.Value;
+            experienceOrbPrefab = data.ExperienceOrbPrefab;
         }
 
         public override void Kill()

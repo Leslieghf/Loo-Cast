@@ -12,18 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0ee46a85b6ecc34faf077c7e580b679, type: 3}
   m_Name: EnemyStationData
   m_EditorClassIdentifier: 
-  BaseMaxHealth:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: b55229490ec85284aa69e9f09701f7c8, type: 2}
-  BaseRegeneration:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: 13ad90df696909d4384ad4009b396f4e, type: 2}
-  BaseDefense:
-    UseConstant: 0
-    ConstantValue: 0
-    Variable: {fileID: 11400000, guid: ae170e45007a6e54bbdfb799179d0516, type: 2}
+  HealthData: {fileID: 11400000, guid: 0f1202c80791f664581c3a5ef902e229, type: 2}
   BaseExperienceDropChance:
     UseConstant: 0
     ConstantValue: 0

@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace LooCast.Health
 {
     using Sound;
     using UI.Bar;
     using UI.Screen;
+    using UI.Canvas;
     using Manager;
+    using Data.Health;
 
     public class PlayerHealth : Health
     {
@@ -15,9 +18,14 @@ namespace LooCast.Health
         private GameSoundHandler soundHandler;
         private DeathScreen deathScreen;
 
-        public override void Initialize(float maxHealth, float regenerationAmount, int defense)
+        public void Initialize(PlayerHealthData data)
         {
-            base.Initialize(maxHealth: maxHealth, regenerationAmount: regenerationAmount, defense: defense);
+            base.Initialize(data);
+
+            maxHealth = data.MaxHealth;
+            health = data.MaxHealth;
+            regenerationAmount = data.RegenerationAmount;
+            defense = data.Defense;
 
             healthBar = FindObjectOfType<HealthBar>();
             healthBar.Initialize(maxHealth, maxHealth);
