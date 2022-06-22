@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d99887d534fb1bf47b1b92a304ecd689, type: 3}
   m_Name: EnemyData
   m_EditorClassIdentifier: 
-  HealthData: {fileID: 11400000, guid: a27041d102f89e64a9b270121aac6310, type: 2}
+  HealthData: {fileID: 11400000, guid: ef70d6a6c91a525429f07e71cafa7b2d, type: 2}
   ContactDamage:
     UseConstant: 0
     ConstantValue: 0

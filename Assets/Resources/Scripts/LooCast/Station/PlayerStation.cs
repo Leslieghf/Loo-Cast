@@ -10,32 +10,34 @@ namespace LooCast.Station
     using Health;
     using Data.Station;
 
-    [RequireComponent(typeof(Targeting), typeof(MultiplexerWeapon))]
+    [RequireComponent(typeof(PlayerStationHealth), typeof(Targeting), typeof(MultiplexerWeapon))]
     public class PlayerStation : Station
     {
-        public Targeting targeting { get; private set; }
-        public MultiplexerWeapon defensiveWeapon { get; private set; }
+        public PlayerStationData Data;
+        public PlayerStationHealth Health { get; protected set; }
+        public Targeting Targeting { get; private set; }
+        public MultiplexerWeapon DefensiveWeapon { get; private set; }
 
-        public PlayerStationData stationData;
-        public MultiplexerWeaponData defensiveMultiplexerWeaponData;
-
-        private void Start()
+        private void Awake()
         {
-            Initialize(stationData);
+            Initialize();
         }
 
-        public void Initialize(PlayerStationData data)
+        public void Initialize()
         {
-            base.Initialize<PlayerStationHealth>(data);
+            Initialize(Data);
 
-            targeting = GetComponent<Targeting>();
-            targeting.Initialize();
-            targeting.radius = data.TargetingRadius.Value;
+            Health = GetComponent<PlayerStationHealth>();
+            Health.Initialize(Data.HealthData);
 
-            defensiveWeapon = GetComponent<MultiplexerWeapon>();
-            defensiveWeapon.Initialize(defensiveMultiplexerWeaponData);
-            defensiveWeapon.enabled = true;
-            defensiveWeapon.attackTimer = defensiveWeapon.attackDelay;
+            Targeting = GetComponent<Targeting>();
+            Targeting.Initialize();
+            Targeting.radius = Data.TargetingRadius.Value;
+
+            DefensiveWeapon = GetComponent<MultiplexerWeapon>();
+            DefensiveWeapon.Initialize(Data.DefensiveMultiplexerWeaponData);
+            DefensiveWeapon.enabled = true;
+            DefensiveWeapon.attackTimer = DefensiveWeapon.attackDelay;
         }
     } 
 }

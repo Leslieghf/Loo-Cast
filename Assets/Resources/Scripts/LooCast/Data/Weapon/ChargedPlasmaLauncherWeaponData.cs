@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LooCast.Data.Weapon
 {
     [CreateAssetMenu(fileName = "ChargedPlasmaLauncherWeaponData", menuName = "Data/Weapon/ChargedPlasmaLauncherWeaponData", order = 0)]
-    public class ChargedPlasmaLauncherWeaponData : WeaponData
+    public sealed class ChargedPlasmaLauncherWeaponData : WeaponData
     {
         public FloatReference ArcLifetime;
         public FloatReference ArcInitialWidth;

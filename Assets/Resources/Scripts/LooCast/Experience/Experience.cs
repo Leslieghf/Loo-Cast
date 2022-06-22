@@ -31,8 +31,8 @@ namespace LooCast.Experience
         public virtual void Initialize()
         {
             experienceBar.Initialize(0, levelExperienceMax);
-            experienceMultiplier = ((IntellectStat)Stats.GetStat("IntellectStat")).experienceMultiplier;
-            levelExperienceMultiplier = ((KnowledgeStat)Stats.GetStat("KnowledgeStat")).levelExperienceMaxMultiplier;
+            experienceMultiplier = ((IntellectStat)Stats.GetStat("IntellectStat")).ExperienceMultiplier;
+            levelExperienceMultiplier = ((KnowledgeStat)Stats.GetStat("KnowledgeStat")).LevelExperienceMaxMultiplier;
         }
 
         public void AddExperience(float xp)

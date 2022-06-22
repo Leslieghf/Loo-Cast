@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
     public class QuicknessStat : Stat
     {
-        public float attackDelayMultiplier { get { return 1 - (GetLevel() * 0.075f); } }
+        public float AttackDelayMultiplier
+        {
+            get
+            {
+                float.TryParse(new DataTable().Compute($"1 - ({Level} * 0.075)", "").ToString(), out float value);
+                return value;
+            }
+        }
 
         public override string ValueToString()
         {
-            return $"-{GetLevel() * 7.5f}%";
+            return $"-{new DataTable().Compute($"{Level} * 7.5", "")}%";
         }
     } 
 }

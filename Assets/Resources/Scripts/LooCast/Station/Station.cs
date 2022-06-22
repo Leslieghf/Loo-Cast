@@ -11,23 +11,18 @@ namespace LooCast.Station
     using Data.Station;
     using Data.Runtime;
 
-    [RequireComponent(typeof(StationHealth)), DisallowMultipleComponent]
+    [DisallowMultipleComponent]
     public abstract class Station : ExtendedMonoBehaviour
     {
-        public StationHealth Health { get; protected set; }
-
         [SerializeField]
         private StationRuntimeSet runtimeSet;
 
-        public virtual void Initialize<StationHealthType>(StationData data) where StationHealthType : StationHealth
+        public void Initialize(StationData data)
         {
             runtimeSet.Add(this);
-
-            Health = GetComponent<StationHealthType>();
-            (Health as StationHealthType).Initialize(data.HealthData);
         }
 
-        public virtual void Kill()
+        public void Kill()
         {
             runtimeSet.Remove(this);
             Destroy(gameObject);

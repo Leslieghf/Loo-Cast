@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
     public class PowerStat : Stat
     {
-        public float knockbackMultiplier { get { return GetLevel() * 0.1f; } }
+        public float KnockbackMultiplier
+        {
+            get
+            {
+                float.TryParse(new DataTable().Compute($"1 + ({Level} * 0.1)", "").ToString(), out float value);
+                return value;
+            }
+        }
 
         public override string ValueToString()
         {
-            return $"+{GetLevel() * 10}%";
+            return $"+{new DataTable().Compute($"{Level} * 10", "")}%";
         }
     }
 }

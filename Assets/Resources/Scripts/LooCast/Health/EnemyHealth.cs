@@ -15,8 +15,9 @@ namespace LooCast.Health
     {
         protected GameSoundHandler soundHandler;
         protected float magnetDropChance;
-        protected float xpDropChance;
-        protected GameObject xpOrbPrefab;
+        protected float experienceDropChance;
+        protected float experienceDropAmount;
+        protected GameObject experienceOrbPrefab;
         protected GameObject magnetOrbPrefab;
 
 
@@ -25,10 +26,11 @@ namespace LooCast.Health
             base.Initialize(data);
 
             soundHandler = FindObjectOfType<GameSoundHandler>();
-            magnetDropChance = 1.0f * Stats.randomChanceMultiplier;
-            xpDropChance = 100.0f * Stats.randomChanceMultiplier;
-            xpOrbPrefab = Resources.Load<GameObject>("Prefabs/ExperienceOrb");
-            magnetOrbPrefab = Resources.Load<GameObject>("Prefabs/MagnetOrb");
+            magnetDropChance = data.BaseMagnetDropChance.Value * Stats.RandomChanceMultiplier;
+            experienceDropChance = data.BaseExperienceDropChance.Value * Stats.RandomChanceMultiplier;
+            experienceDropAmount = data.BaseExperienceDropAmount.Value;
+            experienceOrbPrefab = data.ExperienceOrbPrefab;
+            magnetOrbPrefab = data.MagnetOrbPrefab;
         }
 
         public override void Kill()
@@ -37,15 +39,15 @@ namespace LooCast.Health
             {
                 base.Kill();
 
-                if (Random.Range(0.0f, 100.0f) <= xpDropChance)
+                if (Random.Range(0.0f, 1.0f) <= experienceDropChance)
                 {
-                    GameObject xpOrbObject = Instantiate(xpOrbPrefab, transform.position, Quaternion.identity);
+                    GameObject xpOrbObject = Instantiate(experienceOrbPrefab, transform.position, Quaternion.identity);
                     ExperienceOrb xpOrb = xpOrbObject.GetComponent<ExperienceOrb>();
                     xpOrb.Initialize();
-                    xpOrb.SetExperience(1); 
+                    xpOrb.SetExperience(experienceDropAmount); 
                 }
 
-                if (Random.Range(0.0f, 100.0f) <= magnetDropChance)
+                if (Random.Range(0.0f, 1.0f) <= magnetDropChance)
                 {
                     GameObject magnetOrbObject = Instantiate(magnetOrbPrefab, transform.position, Quaternion.identity);
                     MagnetOrb magnetOrb = magnetOrbObject.GetComponent<MagnetOrb>();

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LooCast.Data.Health
 {
-    public class HealthData : ScriptableObject
+    public class StatData : ScriptableObject
     {
         public FloatReference BaseMaxHealth;
         public FloatReference BaseRegenerationAmount;

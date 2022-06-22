@@ -390,8 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runtimeSet: {fileID: 11400000, guid: c9d187e318d873e48a323f601526b924, type: 2}
-  stationData: {fileID: 11400000, guid: 81dbb1346ac019b46b33db3194cc7ae7, type: 2}
-  defensiveMultiplexerWeaponData: {fileID: 11400000, guid: 2f8173599f013514280722e88d36a88e, type: 2}
+  Data: {fileID: 11400000, guid: 81dbb1346ac019b46b33db3194cc7ae7, type: 2}
 --- !u!114 &513973484690270647
 MonoBehaviour:
   m_ObjectHideFlags: 0

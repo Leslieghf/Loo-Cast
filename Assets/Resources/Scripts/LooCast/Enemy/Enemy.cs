@@ -14,51 +14,49 @@ namespace LooCast.Enemy
     using Target;
     using Experience;
     using Data.Enemy;
-    using Data.Health;
 
     [RequireComponent(typeof(Movement), typeof(EnemyHealth)), DisallowMultipleComponent]
     public abstract class Enemy : ExtendedMonoBehaviour
     {
-        public readonly static List<Enemy> enemies = new List<Enemy>();
+        public readonly static List<Enemy> Enemies = new List<Enemy>();
 
-        public EnemyData data;
+        public EnemyData Data;
+        public Experience PlayerExperience { get; private set; }
+        public ParticleSystem ParticleSystem { get; private set; }
+        public EnemyMovement Movement { get; private set; }
+        public EnemyHealth Health { get; private set; }
+        public Targeting PlayerTargeting { get; private set; }
+        public UnityEvent OnKilled { get; private set; }
 
-        public Experience playerExperience { get; private set; }
-        public new ParticleSystem particleSystem { get; private set; }
-        public EnemyMovement movement { get; private set; }
-        public EnemyHealth health { get; private set; }
-        public Targeting playerTargeting { get; private set; }
-        public UnityEvent onKilled { get; private set; }
 
-
-        private void Start()
+        private void Awake()
         {
-            enemies.Add(this);
+            Enemies.Add(this);
 
-            playerExperience = FindObjectOfType<Experience>();
+            PlayerExperience = FindObjectOfType<Experience>();
 
-            particleSystem = GetComponentInChildren<ParticleSystem>();
-            particleSystem.Initialize();
+            ParticleSystem = GetComponentInChildren<ParticleSystem>();
+            ParticleSystem.Initialize();
 
-            movement = GetComponent<EnemyMovement>();
-            movement.Initialize();
-            movement.onMovementDisabled.AddListener(particleSystem.PauseParticleSpawning);
-            movement.onMovementEnabled.AddListener(particleSystem.ResumeParticleSpawning);
+            Movement = GetComponent<EnemyMovement>();
+            Movement.Initialize();
+            Movement.onMovementDisabled.AddListener(ParticleSystem.PauseParticleSpawning);
+            Movement.onMovementEnabled.AddListener(ParticleSystem.ResumeParticleSpawning);
 
-            health = GetComponent<EnemyHealth>();
-            health.Initialize(data.HealthData);
-            health.onKilled.AddListener(Kill);
+            Health = GetComponent<EnemyHealth>();
+            Health.Initialize(Data.HealthData);
+            Health.onKilled.AddListener(Kill);
 
-            playerTargeting = GameSceneManager.Instance.Player.Targeting;
+            PlayerTargeting = GameSceneManager.Instance.Player.Targeting;
 
-            onKilled = new UnityEvent();
-            health.onKilled.AddListener( () => { onKilled.Invoke(); } );
+            OnKilled = new UnityEvent();
+            Health.onKilled.AddListener( () => { OnKilled.Invoke(); } );
         }
 
         public virtual void Kill()
         {
-            enemies.Remove(this);
-            particleSystem.Kill();
+            Enemies.Remove(this);
+            ParticleSystem.Kill();
             Destroy(gameObject);
         }
 
@@ -73,7 +71,7 @@ namespace LooCast.Enemy
                     PlayerPrefs.SetFloat("Difficulty", 1.0f);
                 }
                 difficulty = PlayerPrefs.GetFloat("Difficulty");
-                playerHealth.Damage(new DamageInfo(collision.gameObject, collision.gameObject, data.ContactDamage.Value * difficulty, 0, 0, 0, 0));
+                playerHealth.Damage(new DamageInfo(collision.gameObject, collision.gameObject, Data.ContactDamage.Value * difficulty, 0, 0, 0, 0));
             }
         }
     } 

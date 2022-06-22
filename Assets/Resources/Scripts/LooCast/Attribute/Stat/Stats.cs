@@ -7,30 +7,30 @@ namespace LooCast.Attribute.Stat
     public static class Stats
     {
         public static readonly Dictionary<string, Stat> stats = new Dictionary<string, Stat>();
-        public static float energyMultiplier { get { return ((BodyStat)GetStat("BodyStat")).energyMultiplier; } }
-        public static float damageMultiplier { get { return ((MightStat)GetStat("MightStat")).damageMultiplier; } }
-        public static int armorPenetrationIncrease { get { return ((BrawnStat)GetStat("BrawnStat")).armorPenetrationIncrease; } }
-        public static float knockbackMultiplier { get { return ((PowerStat)GetStat("PowerStat")).knockbackMultiplier; } }
-        public static float durationMultiplier { get { return ((StaminaStat)GetStat("StaminaStat")).durationMultiplier; } }
-        public static float energyRegenerationMultiplier { get { return ((EnduranceStat)GetStat("EnduranceStat")).energyRegenerationMultiplier; } }
-        public static float healthMultiplier { get { return ((VitalityStat)GetStat("VitalityStat")).healthMultiplier; } }
-        public static float healthRegenrationMultiplier { get { return ((RecoveryStat)GetStat("RecoveryStat")).healthRegenrationMultiplier; } }
-        public static int defenseIncrease { get { return ((ResistanceStat)GetStat("ResistanceStat")).defenseIncrease; } }
-        public static float energyConsumptionMultiplier { get { return ((FortitudeStat)GetStat("FortitudeStat")).energyConsumptionMultiplier; } }
-        public static int shieldStrengthIncrease { get { return ((ResilienceStat)GetStat("ResilienceStat")).shieldStrengthIncrease; } }
-        public static float movementSpeedMultiplier { get { return ((AgilityStat)GetStat("AgilityStat")).movementSpeedMultiplier; } }
-        public static float consecutiveProjectileDelayMultiplier { get { return ((ReflexesStat)GetStat("ReflexesStat")).consecutiveProjectileDelayMultiplier; } }
-        public static float attackDelayMultiplier { get { return ((QuicknessStat)GetStat("QuicknessStat")).attackDelayMultiplier; } }
-        public static float experienceMultiplier { get { return ((IntellectStat)GetStat("IntellectStat")).experienceMultiplier; } }
-        public static float rangeMultiplier { get { return ((MindStat)GetStat("MigMindStathtStat")).rangeMultiplier; } }
-        public static float levelExperienceMaxMultiplier { get { return ((KnowledgeStat)GetStat("KnowledgeStat")).levelExperienceMaxMultiplier; } }
-        public static float projectileSizeMultiplier { get { return ((SanityStat)GetStat("SanityStat")).projectileSizeMultiplier; } }
-        public static float projectileSpeedMultiplier { get { return ((PersonalityStat)GetStat("PersonalityStat")).projectileSpeedMultiplier; } }
-        public static float damageReflection { get { return ((EgoStat)GetStat("EgoStat")).damageReflection; } }
-        public static int piercingIncrease { get { return ((ResolveStat)GetStat("ResolveStat")).piercingIncrease; } }
-        public static float negativeEventChanceMultiplier { get { return ((FateStat)GetStat("FateStat")).negativeEventChanceMultiplier; } }
-        public static float randomChanceMultiplier { get { return ((ChanceStat)GetStat("ChanceStat")).randomChanceMultiplier; } }
-        public static float positiveEventChanceMultiplier { get { return ((FortuneStat)GetStat("FortuneStat")).positiveEventChanceMultiplier; } }
+        public static float EnergyMultiplier { get { return ((BodyStat)GetStat("BodyStat")).EnergyMultiplier; } }
+        public static float DamageMultiplier { get { return ((MightStat)GetStat("MightStat")).DamageMultiplier; } }
+        public static int ArmorPenetrationIncrease { get { return ((BrawnStat)GetStat("BrawnStat")).ArmorPenetrationIncrease; } }
+        public static float KnockbackMultiplier { get { return ((PowerStat)GetStat("PowerStat")).KnockbackMultiplier; } }
+        public static float DurationMultiplier { get { return ((StaminaStat)GetStat("StaminaStat")).DurationMultiplier; } }
+        public static float EnergyRegenerationMultiplier { get { return ((EnduranceStat)GetStat("EnduranceStat")).EnergyRegenerationMultiplier; } }
+        public static float HealthMultiplier { get { return ((VitalityStat)GetStat("VitalityStat")).HealthMultiplier; } }
+        public static float HealthRegenrationMultiplier { get { return ((RecoveryStat)GetStat("RecoveryStat")).HealthRegenrationMultiplier; } }
+        public static int DefenseIncrease { get { return ((ResistanceStat)GetStat("ResistanceStat")).DefenseIncrease; } }
+        public static float EnergyConsumptionMultiplier { get { return ((FortitudeStat)GetStat("FortitudeStat")).EnergyConsumptionMultiplier; } }
+        public static int ShieldStrengthIncrease { get { return ((ResilienceStat)GetStat("ResilienceStat")).ShieldStrengthIncrease; } }
+        public static float MovementSpeedMultiplier { get { return ((AgilityStat)GetStat("AgilityStat")).MovementSpeedMultiplier; } }
+        public static float ConsecutiveProjectileDelayMultiplier { get { return ((ReflexesStat)GetStat("ReflexesStat")).ConsecutiveProjectileDelayMultiplier; } }
+        public static float AttackDelayMultiplier { get { return ((QuicknessStat)GetStat("QuicknessStat")).AttackDelayMultiplier; } }
+        public static float ExperienceMultiplier { get { return ((IntellectStat)GetStat("IntellectStat")).ExperienceMultiplier; } }
+        public static float RangeMultiplier { get { return ((MindStat)GetStat("MigMindStathtStat")).RangeMultiplier; } }
+        public static float LevelExperienceMaxMultiplier { get { return ((KnowledgeStat)GetStat("KnowledgeStat")).LevelExperienceMaxMultiplier; } }
+        public static float ProjectileSizeMultiplier { get { return ((SanityStat)GetStat("SanityStat")).ProjectileSizeMultiplier; } }
+        public static float ProjectileSpeedMultiplier { get { return ((PersonalityStat)GetStat("PersonalityStat")).ProjectileSpeedMultiplier; } }
+        public static float DamageReflection { get { return ((EgoStat)GetStat("EgoStat")).DamageReflection; } }
+        public static int PiercingIncrease { get { return ((ResolveStat)GetStat("ResolveStat")).PiercingIncrease; } }
+        public static float NegativeEventChanceMultiplier { get { return ((FateStat)GetStat("FateStat")).NegativeEventChanceMultiplier; } }
+        public static float RandomChanceMultiplier { get { return ((ChanceStat)GetStat("ChanceStat")).RandomChanceMultiplier; } }
+        public static float PositiveEventChanceMultiplier { get { return ((FortuneStat)GetStat("FortuneStat")).PositiveEventChanceMultiplier; } }
 
         public static Stat GetStat(string statClassName)
         {

@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace LooCast.Data.Station
 {
+    using Health;
+
     [CreateAssetMenu(fileName = "EnemyStationData", menuName = "Data/Station/EnemyStationData", order = 0)]
-    public class EnemyStationData : StationData
+    public sealed class EnemyStationData : StationData
     {
-        public FloatReference BaseExperienceDropChance;
-        public FloatReference BaseExperienceDropAmount;
-        public GameObject ExperienceOrbPrefab;
+        public EnemyStationHealthData HealthData;
     } 
 }

@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
     public class ChanceStat : Stat
     {
-        public float randomChanceMultiplier { get { return 1 + (GetLevel() * 0.1f); } }
+        public float RandomChanceMultiplier
+        {
+            get
+            {
+                float.TryParse(new DataTable().Compute($"1 + ({Level} * 0.1)", "").ToString(), out float value);
+                return value;
+            }
+        }
 
         public override string ValueToString()
         {
-            return $"+{GetLevel() * 10}%";
+            return $"+{new DataTable().Compute($"{Level} * 10", "")}%";
         }
     } 
 }

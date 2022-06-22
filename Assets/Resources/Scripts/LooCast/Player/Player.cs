@@ -13,15 +13,12 @@ namespace LooCast.Player
     using Currency;
     using Experience;
     using Attribute.Stat;
-    using Data.Weapon;
     using Data.Player;
-    using Data.Health;
 
     [RequireComponent(typeof(PlayerHealth), typeof(Targeting), typeof(PlayerMovement)), DisallowMultipleComponent]
     public class Player : ExtendedMonoBehaviour
     {
-        public PlayerData data;
-
+        public PlayerData Data;
         public PlayerHealth Health { get; private set; }
         public Targeting Targeting { get; private set; }
         public Experience Experience { get; private set; }
@@ -29,19 +26,10 @@ namespace LooCast.Player
         public Dictionary<string, Weapon> Weapons { get; private set; }
         public ParticleSystem ParticleSystem { get; private set; }
 
-        protected float baseMaxHealth = 100.0f;
-        protected float baseRegeneration = 5.0f;
-        protected int baseDefense = 0;
-
-        public MultiplexerWeaponData multiplexerWeaponData;
-        public LaserEmitterWeaponData laserEmitterWeaponData;
-        public FreezeRayWeaponData freezeRayWeaponData;
-        public ChargedPlasmaLauncherWeaponData chargedPlasmaLauncherWeaponData;
-
-        private void Start()
+        private void Awake()
         {
             Health = GetComponent<PlayerHealth>();
-            Health.Initialize(data.healthData);
+            Health.Initialize(Data.HealthData);
 
             Targeting = GetComponent<Targeting>();
             Targeting.Initialize();
@@ -50,25 +38,25 @@ namespace LooCast.Player
             Weapons = new Dictionary<string, Weapon>();
 
             MultiplexerWeapon multiplexerWeapon = gameObject.AddComponent<MultiplexerWeapon>();
-            multiplexerWeapon.Initialize(multiplexerWeaponData);
+            multiplexerWeapon.Initialize(Data.MultiplexerWeaponData);
             multiplexerWeapon.enabled = true;
             multiplexerWeapon.attackTimer = multiplexerWeapon.attackDelay;
             Weapons.Add("MultiplexerWeapon", multiplexerWeapon);
 
             LaserEmitterWeapon laserEmitterWeapon = gameObject.AddComponent<LaserEmitterWeapon>();
-            laserEmitterWeapon.Initialize(laserEmitterWeaponData);
+            laserEmitterWeapon.Initialize(Data.LaserEmitterWeaponData);
             laserEmitterWeapon.enabled = true;
             laserEmitterWeapon.attackTimer = laserEmitterWeapon.attackDelay;
             Weapons.Add("LaserEmitterWeapon", laserEmitterWeapon);
 
             FreezeRayWeapon freezeRayWeapon = gameObject.AddComponent<FreezeRayWeapon>();
-            freezeRayWeapon.Initialize(freezeRayWeaponData);
+            freezeRayWeapon.Initialize(Data.FreezeRayWeaponData);
             freezeRayWeapon.enabled = true;
             freezeRayWeapon.attackTimer = freezeRayWeapon.attackDelay;
             Weapons.Add("FreezeRayWeapon", freezeRayWeapon);
 
             ChargedPlasmaLauncherWeapon chargedPlasmaLauncherWeapon = gameObject.AddComponent<ChargedPlasmaLauncherWeapon>();
-            chargedPlasmaLauncherWeapon.Initialize(chargedPlasmaLauncherWeaponData);
+            chargedPlasmaLauncherWeapon.Initialize(Data.ChargedPlasmaLauncherWeaponData);
             chargedPlasmaLauncherWeapon.enabled = true;
             chargedPlasmaLauncherWeapon.attackTimer = chargedPlasmaLauncherWeapon.attackDelay;
             Weapons.Add("ChargedPlasmaLauncherWeapon", chargedPlasmaLauncherWeapon);

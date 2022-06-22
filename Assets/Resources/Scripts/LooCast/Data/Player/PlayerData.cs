@@ -5,10 +5,15 @@ using UnityEngine;
 namespace LooCast.Data.Player
 {
     using Health;
+    using Weapon;
 
     [CreateAssetMenu(fileName = "PlayerData", menuName = "Data/Player/PlayerData", order = 0)]
-    public class PlayerData : ScriptableObject
+    public sealed class PlayerData : ScriptableObject
     {
-        public PlayerHealthData healthData;
+        public PlayerHealthData HealthData;
+        public MultiplexerWeaponData MultiplexerWeaponData;
+        public LaserEmitterWeaponData LaserEmitterWeaponData;
+        public FreezeRayWeaponData FreezeRayWeaponData;
+        public ChargedPlasmaLauncherWeaponData ChargedPlasmaLauncherWeaponData;
     }
 }

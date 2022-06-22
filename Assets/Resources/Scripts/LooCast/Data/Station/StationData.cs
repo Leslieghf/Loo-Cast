@@ -5,10 +5,8 @@ using UnityEngine;
 
 namespace LooCast.Data.Station
 {
-    using Health;
-
-    public class StationData : ScriptableObject
+    public abstract class StationData : ScriptableObject
     {
-        public StationHealthData HealthData;
+        
     } 
 }

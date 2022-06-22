@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188e826b9b4eb464b8e850d14d0420c3, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  healthData: {fileID: 11400000, guid: 27ed8463b7044cb46a2a2b5ee863b43a, type: 2}
+  HealthData: {fileID: 11400000, guid: 27ed8463b7044cb46a2a2b5ee863b43a, type: 2}
+  MultiplexerWeaponData: {fileID: 11400000, guid: 293cede1177f1cb44ac6912280fde994, type: 2}
+  LaserEmitterWeaponData: {fileID: 11400000, guid: fe9ca805e9c1e6b47a66e8a0b61088ae, type: 2}
+  FreezeRayWeaponData: {fileID: 11400000, guid: 4c1a0ddd11b7ba749bf107b08aaccf41, type: 2}
+  ChargedPlasmaLauncherWeaponData: {fileID: 11400000, guid: e92290d4150f6bb4d9ee32a804d27f4e, type: 2}

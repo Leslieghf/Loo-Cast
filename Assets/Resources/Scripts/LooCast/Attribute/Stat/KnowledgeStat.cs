@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
     public class KnowledgeStat : Stat
     {
-        public float levelExperienceMaxMultiplier { get { return 1.75f - (GetLevel() * 0.05f); } }
+        public float LevelExperienceMaxMultiplier
+        {
+            get
+            {
+                float.TryParse(new DataTable().Compute($"1.75 - ({Level} * 0.05)", "").ToString(), out float value);
+                return value;
+            }
+        }
 
         public override string ValueToString()
         {
-            return $"-{GetLevel() * 5}%";
+            return $"-{new DataTable().Compute($"{Level} * 5", "")}%";
         }
     } 
 }

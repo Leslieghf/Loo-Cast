@@ -40,7 +40,7 @@ namespace LooCast.Health
 
         public override void Damage(DamageInfo damageInfo)
         {
-            if (Random.Range(0.0f, 1.0f) < 0.1f * Stats.randomChanceMultiplier)
+            if (Random.Range(0.0f, 1.0f) < 0.1f * Stats.RandomChanceMultiplier)
             {
                 damageInfo.damage *= 5.0f;
             }

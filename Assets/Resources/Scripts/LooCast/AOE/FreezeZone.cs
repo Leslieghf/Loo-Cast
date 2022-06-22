@@ -41,8 +41,8 @@ namespace LooCast.AOE
             deployTime = Resources.Load<AnimationClip>("Animations/AOEZonePopup").length;
             retractTime = Resources.Load<AnimationClip>("Animations/AOEZoneDisappear").length;
 
-            baseScale *= Stats.projectileSizeMultiplier;
-            movementSpeed *= Stats.projectileSpeedMultiplier;
+            baseScale *= Stats.ProjectileSizeMultiplier;
+            movementSpeed *= Stats.ProjectileSpeedMultiplier;
             
             transform.localScale = baseScale * 0.1f; 
         }

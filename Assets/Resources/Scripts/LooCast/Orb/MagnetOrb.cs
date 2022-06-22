@@ -23,7 +23,7 @@ namespace LooCast.Orb
             playerObject = GameObject.FindGameObjectWithTag("Player");
             playerCollider = playerObject.GetComponent<CircleCollider2D>();
             soundHandler = FindObjectOfType<GameSoundHandler>();
-            pickupRangeMultiplier = ((MindStat)Stats.GetStat("MindStat")).rangeMultiplier;
+            pickupRangeMultiplier = ((MindStat)Stats.GetStat("MindStat")).RangeMultiplier;
         }
 
         protected override void Cycle()

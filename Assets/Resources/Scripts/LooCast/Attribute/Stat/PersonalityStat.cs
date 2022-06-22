@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
     public class PersonalityStat : Stat
     {
-        public float projectileSpeedMultiplier { get { return 1 + (GetLevel() * 0.1f); } }
+        public float ProjectileSpeedMultiplier
+        {
+            get
+            {
+                float.TryParse(new DataTable().Compute($"1 + ({Level} * 0.1)", "").ToString(), out float value);
+                return value;
+            }
+        }
 
         public override string ValueToString()
         {
-            return $"+{GetLevel() * 10}%";
+            return $"+{new DataTable().Compute($"{Level} * 10", "")}%";
         }
     } 
 }

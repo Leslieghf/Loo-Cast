@@ -1,16 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
     public class ResolveStat : Stat
     {
-        public int piercingIncrease { get { return GetLevel(); } }
+        public int PiercingIncrease
+        {
+            get
+            {
+                int.TryParse(new DataTable().Compute($"{Level}", "").ToString(), out int value);
+                return value;
+            }
+        }
 
         public override string ValueToString()
         {
-            return $"+{GetLevel()}";
+            return $"+{new DataTable().Compute($"{Level}", "")}";
         }
     } 
 }

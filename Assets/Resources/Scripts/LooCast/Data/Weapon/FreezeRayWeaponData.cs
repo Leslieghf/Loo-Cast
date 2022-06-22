@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LooCast.Data.Weapon
 {
     [CreateAssetMenu(fileName = "FreezeRayWeaponData", menuName = "Data/Weapon/FreezeRayWeaponData", order = 0)]
-    public class FreezeRayWeaponData : WeaponData
+    public sealed class FreezeRayWeaponData : WeaponData
     {
 
     } 

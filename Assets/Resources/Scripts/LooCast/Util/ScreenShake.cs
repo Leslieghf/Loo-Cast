@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace LooCast.Util
 {
-    public class ScreenShake : ExtendedMonoBehaviour
+    public sealed class ScreenShake : ExtendedMonoBehaviour
     {
         private float shakeTimer;
 

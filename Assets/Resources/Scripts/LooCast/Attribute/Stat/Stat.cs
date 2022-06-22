@@ -8,6 +8,8 @@ namespace LooCast.Attribute.Stat
 {
     public abstract class Stat
     {
+        public int Level { get { return GetLevel(); } }
+
         public UnityEvent onLevelChanged;
         public UnityEvent onMaxLevelChanged;
         protected string name;

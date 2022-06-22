@@ -53,6 +53,9 @@ namespace LooCast.Manager
         [SerializeField]
         private StationRuntimeSet stationRuntimeSet;
 
+        [SerializeField]
+        private EnemyRuntimeSet enemyRuntimeSet;
+
 
         private void Awake()
         {
@@ -74,6 +77,7 @@ namespace LooCast.Manager
         public void Initialize()
         {
             stationRuntimeSet.Items.Clear();
+            enemyRuntimeSet.Items.Clear();
 
             IsPaused = false;
             worldSpaceCanvas.Initialize();

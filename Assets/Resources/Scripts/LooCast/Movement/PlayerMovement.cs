@@ -64,9 +64,9 @@ namespace LooCast.Movement
             baseEnergyGeneration = 1.0f;
 
             energyBar = FindObjectOfType<EnergyBar>();
-            energyBar.Initialize(baseEnergy * Stats.energyMultiplier);
-            energyConsumption = baseEnergyConsumption * Stats.energyConsumptionMultiplier;
-            energyGeneration = baseEnergyGeneration * Stats.energyRegenerationMultiplier;
+            energyBar.Initialize(baseEnergy * Stats.EnergyMultiplier);
+            energyConsumption = baseEnergyConsumption * Stats.EnergyConsumptionMultiplier;
+            energyGeneration = baseEnergyGeneration * Stats.EnergyRegenerationMultiplier;
 
             isUsingEnergy = false;
         }
@@ -143,7 +143,7 @@ namespace LooCast.Movement
 
             if (!isEnergyDepleted)
             {
-                rigidbody.AddForce(new Vector2(axis[0], axis[1]).normalized * movementSpeed * ((AgilityStat)Stats.GetStat("AgilityStat")).movementSpeedMultiplier * Constants.INERTIAL_COEFFICIENT); 
+                rigidbody.AddForce(new Vector2(axis[0], axis[1]).normalized * movementSpeed * ((AgilityStat)Stats.GetStat("AgilityStat")).MovementSpeedMultiplier * Constants.INERTIAL_COEFFICIENT); 
             }
         }
     } 

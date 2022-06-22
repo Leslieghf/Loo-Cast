@@ -63,16 +63,16 @@ namespace LooCast.Weapon
             projectilePrefab = Resources.Load<GameObject>(projectilePrefabResourcePath);
 
 
-            damage = baseDamage * Stats.damageMultiplier;
-            critChance = baseCritChance * Stats.randomChanceMultiplier;
-            critDamage = baseCritDamage * Stats.damageMultiplier;
-            knockback = baseKnockback * Stats.knockbackMultiplier;
-            attackDelay = baseAttackDelay * Stats.attackDelayMultiplier;
-            projectileSpeed = baseProjectileSpeed * Stats.projectileSpeedMultiplier;
-            projectileSize = baseProjectileSize * Stats.projectileSizeMultiplier;
+            damage = baseDamage * Stats.DamageMultiplier;
+            critChance = baseCritChance * Stats.RandomChanceMultiplier;
+            critDamage = baseCritDamage * Stats.DamageMultiplier;
+            knockback = baseKnockback * Stats.KnockbackMultiplier;
+            attackDelay = baseAttackDelay * Stats.AttackDelayMultiplier;
+            projectileSpeed = baseProjectileSpeed * Stats.ProjectileSpeedMultiplier;
+            projectileSize = baseProjectileSize * Stats.ProjectileSizeMultiplier;
             projectileLifetime = baseProjectileLifetime;
-            piercing = basePiercing + Stats.piercingIncrease;
-            armorPenetration = baseArmorPenetration + Stats.armorPenetrationIncrease;
+            piercing = basePiercing + Stats.PiercingIncrease;
+            armorPenetration = baseArmorPenetration + Stats.ArmorPenetrationIncrease;
 
             attackTimer = 0.0f;
             hasCooledDown = false;

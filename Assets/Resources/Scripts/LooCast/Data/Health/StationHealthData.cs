@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LooCast.Data.Health
 {
-    public class StationHealthData : HealthData
+    public class StationHealthData : StatData
     {
         
     } 

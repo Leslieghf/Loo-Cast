@@ -8,7 +8,7 @@ namespace LooCast.Health
     using Sound;
     using UI.Bar;
     using UI.Screen;
-    using UI.Canvas;
+    using Attribute.Stat;
     using Manager;
     using Data.Health;
 
@@ -22,10 +22,10 @@ namespace LooCast.Health
         {
             base.Initialize(data);
 
-            maxHealth = data.MaxHealth;
-            health = data.MaxHealth;
-            regenerationAmount = data.RegenerationAmount;
-            defense = data.Defense;
+            maxHealth = data.MaxHealth * Stats.HealthMultiplier;
+            health = data.MaxHealth * Stats.HealthMultiplier;
+            regenerationAmount = data.RegenerationAmount * Stats.HealthRegenrationMultiplier;
+            defense = data.Defense + Stats.DefenseIncrease;
 
             healthBar = FindObjectOfType<HealthBar>();
             healthBar.Initialize(maxHealth, maxHealth);

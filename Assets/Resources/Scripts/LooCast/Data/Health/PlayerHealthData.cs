@@ -8,13 +8,13 @@ namespace LooCast.Data.Health
     using Attribute.Stat;
 
     [CreateAssetMenu(fileName = "PlayerHealthData", menuName = "Data/Health/PlayerHealthData", order = 0)]
-    public class PlayerHealthData : HealthData
+    public class PlayerHealthData : StatData
     {
         public float MaxHealth
         {
             get
             {
-                return BaseMaxHealth.Value * Stats.healthMultiplier;
+                return BaseMaxHealth.Value * Stats.HealthMultiplier;
             }
         }
 
@@ -22,7 +22,7 @@ namespace LooCast.Data.Health
         {
             get
             {
-                return BaseRegenerationAmount.Value * Stats.healthRegenrationMultiplier;
+                return BaseRegenerationAmount.Value * Stats.HealthRegenrationMultiplier;
             }
         }
 
@@ -30,7 +30,7 @@ namespace LooCast.Data.Health
         {
             get
             {
-                return BaseDefense.Value + Stats.defenseIncrease;
+                return BaseDefense.Value + Stats.DefenseIncrease;
             }
         }
     } 

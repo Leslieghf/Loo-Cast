@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LooCast.Data.Weapon
 {
     [CreateAssetMenu(fileName = "LaserEmitterWeaponData", menuName = "Data/Weapon/LaserEmitterWeaponData", order = 0)]
-    public class LaserEmitterWeaponData : WeaponData
+    public sealed class LaserEmitterWeaponData : WeaponData
     {
         public FloatReference LaserLength;
     } 

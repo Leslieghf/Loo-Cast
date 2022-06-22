@@ -17,13 +17,12 @@ namespace LooCast.Health
         protected float regenerationTime;
         protected float regenerationTimer;
         protected int defense;
+        protected bool isAlive;
 
-        protected bool isAlive = true;
         public UnityEvent onKilled;
-
         protected WorldSpaceCanvas canvas;
 
-        public void Initialize(HealthData data)
+        public void Initialize(StatData data)
         {
             maxHealth = data.BaseMaxHealth.Value;
             health = maxHealth;
@@ -34,6 +33,8 @@ namespace LooCast.Health
 
             defense = data.BaseDefense.Value;
 
+            isAlive = true;
+
             onKilled = new UnityEvent();
 
             canvas = FindObjectOfType<WorldSpaceCanvas>();
@@ -41,12 +42,7 @@ namespace LooCast.Health
 
         protected override void Cycle()
         {
-            regenerationTimer += Time.deltaTime;
-            if (regenerationTimer >= regenerationTime)
-            {
-                regenerationTimer = 0.0f;
-                Heal(regenerationAmount);
-            }
+            Heal(regenerationAmount * Time.deltaTime);
         }
 
         public virtual void Damage(DamageInfo damageInfo)

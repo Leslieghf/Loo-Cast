@@ -4,37 +4,45 @@ using UnityEngine;
 
 namespace LooCast.Spawner
 {
-    using Util;
     using Enemy;
+    using Data.Spawner;
+    using Data.Runtime;
 
     public class EnemySpawner : Spawner
     {
-        public float spawnDelay { get; protected set; }
-        public float spawnTimer { get; protected set; }
-        public int maxEnemies { get; protected set; }
-        public GameObject prefab { get; protected set; }
-        public List<Enemy> spawnedEnemies { get; protected set; }
+        public EnemySpawnerData Data;
+
+        public float SpawnDelay { get; protected set; }
+        public float SpawnTimer { get; protected set; }
+        public int MaxEnemies { get; protected set; }
+        public GameObject Prefab { get; protected set; }
+        public List<Enemy> SpawnedEnemies { get; protected set; }
+
+        private void Awake()
+        {
+            Initialize();
+        }
 
         public override void Initialize()
         {
-            spawnDelay = 1.0f;
-            spawnTimer = 0.0f;
-            maxEnemies = 3;
-            prefab = Resources.Load<GameObject>("Prefabs/SmolEnemy");
-            spawnedEnemies = new List<Enemy>();
+            SpawnDelay = Data.BaseSpawnDelay.Value;
+            SpawnTimer = 0.0f;
+            MaxEnemies = Data.BaseMaxEnemies.Value;
+            Prefab = Data.EnemyPrefab;
+            SpawnedEnemies = new List<Enemy>();
         }
 
         protected override void Cycle()
         {
-            spawnTimer += Time.deltaTime;
+            SpawnTimer += Time.deltaTime;
 
-            if (spawnTimer >= spawnDelay && spawnedEnemies.Count < maxEnemies)
+            if (SpawnTimer >= SpawnDelay && SpawnedEnemies.Count < MaxEnemies)
             {
-                spawnTimer = 0.0f;
-                GameObject spawnedObject = Instantiate(prefab, (Vector3)(UnityEngine.Random.insideUnitCircle * 50.0f) + transform.position, Quaternion.identity, null);
+                SpawnTimer = 0.0f;
+                GameObject spawnedObject = Instantiate(Prefab, (Vector3)(UnityEngine.Random.insideUnitCircle * 50.0f) + transform.position, Quaternion.identity, null);
                 Enemy spawnedEnemy = spawnedObject.GetComponent<Enemy>();
-                spawnedEnemies.Add(spawnedEnemy);
-                spawnedEnemy.onKilled.AddListener( () => { spawnedEnemies.Remove(spawnedEnemy); } );
+                SpawnedEnemies.Add(spawnedEnemy);
+                spawnedEnemy.OnKilled.AddListener( () => { SpawnedEnemies.Remove(spawnedEnemy); } );
             }
         }
     }

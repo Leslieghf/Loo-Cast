@@ -42,7 +42,7 @@ namespace LooCast.Orb
             playerExperience = playerObject.GetComponent<LooCast.Experience.Experience>();
             playerCollider = playerObject.GetComponent<CircleCollider2D>();
             soundHandler = GameObject.FindObjectOfType<GameSoundHandler>();
-            pickupRangeMultiplier = ((MindStat)Stats.GetStat("MindStat")).rangeMultiplier;
+            pickupRangeMultiplier = ((MindStat)Stats.GetStat("MindStat")).RangeMultiplier;
             isVisible = true;
         }
 

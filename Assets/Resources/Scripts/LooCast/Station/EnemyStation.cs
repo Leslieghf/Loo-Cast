@@ -8,23 +8,27 @@ namespace LooCast.Station
     using Health;
     using Data.Station;
 
+    [RequireComponent(typeof(EnemyStationHealth))]
     public class EnemyStation : Station
     {
-        public EnemySpawner spawner { get; protected set; }
+        public EnemyStationData Data;
+        public EnemyStationHealth Health { get; protected set; }
+        public EnemySpawner Spawner { get; protected set; }
 
-        public EnemyStationData stationData;
-
-        private void Start()
+        private void Awake()
         {
-            Initialize(stationData);
+            Initialize();
         }
 
-        public void Initialize(EnemyStationData data)
+        public void Initialize()
         {
-            base.Initialize<EnemyStationHealth>(data);
+            Initialize(Data);
 
-            spawner = GetComponentInChildren<EnemySpawner>();
-            spawner.Initialize();
+            Health = GetComponent<EnemyStationHealth>();
+            Health.Initialize(Data.HealthData);
+
+            Spawner = GetComponentInChildren<EnemySpawner>();
+            Spawner.Initialize();
         }
     } 
 }
