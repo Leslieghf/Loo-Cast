@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406317b56ecdf6b43b127ed8df63b27e, type: 3}
+  m_Name: IntellectStatData
+  m_EditorClassIdentifier: 
+  StatValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 67407dcd6d008104098f2a1c3d6c77cb, type: 2}
+  EffectValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 3b50e00320ee4ef4d80f4fb65cdda487, type: 2}

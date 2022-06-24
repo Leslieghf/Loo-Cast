@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fc4a5dd5a7e824c846f03a09af9f41, type: 3}
+  m_Name: MightStatData
+  m_EditorClassIdentifier: 
+  StatValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: ab1cbb7e975266f4a9766a44f08636af, type: 2}
+  EffectValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 0e267ea1010e00a4988f7ee805fa3839, type: 2}

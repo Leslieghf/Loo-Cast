@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 053b7f797137fe445b275d201c86801e, type: 3}
+  m_Name: SocialStatData
+  m_EditorClassIdentifier: 
+  StatValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 6800d7a33caaba540ad40e99a90376a6, type: 2}
+  EffectValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: b7bc5e459a50f7a44876109e079f2fd3, type: 2}

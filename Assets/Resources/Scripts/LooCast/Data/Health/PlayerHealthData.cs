@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LooCast.Data.Health
 {
-    using Attribute.Stat;
+    using LooCast.Attribute.Stat;
 
     [CreateAssetMenu(fileName = "PlayerHealthData", menuName = "Data/Health/PlayerHealthData", order = 0)]
     public class PlayerHealthData : StatData

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 019f22cab3f89e34ea58c0bd59627281, type: 3}
+  m_Name: CharmStatData
+  m_EditorClassIdentifier: 
+  StatValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 2643a99540dfa1b4db7fe2da0f48331b, type: 2}
+  EffectValueFormula:
+    UseConstant: 0
+    ConstantValue: 
+    Variable: {fileID: 11400000, guid: 199ca68d0791e92438b4cc81d669387a, type: 2}

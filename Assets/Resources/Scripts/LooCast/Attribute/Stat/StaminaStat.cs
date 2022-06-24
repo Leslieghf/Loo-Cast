@@ -19,7 +19,6 @@ namespace LooCast.Attribute.Stat
         public override string ValueToString()
         {
             return $"+{new DataTable().Compute($"{Level} * 10", "")}%";
-            return $"+{Level * 10}%";
         }
     } 
 }

@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LooCast.Data.Runtime.Attribute.Stat
+namespace LooCast.Data.Attribute.Stat
 {
-    [CreateAssetMenu(fileName = "PsycheStatData", menuName = "Data/Runtime/Attribute/Stat/PsycheStatData", order = 0)]
+    [CreateAssetMenu(fileName = "PsycheStatData", menuName = "Data/Attribute/Stat/PsycheStatData", order = 0)]
     public sealed class PsycheStatData : StatData
     {
         

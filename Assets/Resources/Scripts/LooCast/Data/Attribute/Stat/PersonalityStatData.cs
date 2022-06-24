@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LooCast.Data.Runtime.Attribute.Stat
+namespace LooCast.Data.Attribute.Stat
 {
-    [CreateAssetMenu(fileName = "PersonalityStatData", menuName = "Data/Runtime/Attribute/Stat/PersonalityStatData", order = 0)]
+    [CreateAssetMenu(fileName = "PersonalityStatData", menuName = "Data/Attribute/Stat/PersonalityStatData", order = 0)]
     public sealed class PersonalityStatData : StatData
     {
-        public FloatReference ProjectileSpeedMultiplier;
+        
     } 
 }

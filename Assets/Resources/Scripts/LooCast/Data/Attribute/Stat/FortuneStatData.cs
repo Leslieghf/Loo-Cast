@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LooCast.Data.Runtime.Attribute.Stat
+namespace LooCast.Data.Attribute.Stat
 {
-    [CreateAssetMenu(fileName = "FortuneStatData", menuName = "Data/Runtime/Attribute/Stat/FortuneStatData", order = 0)]
+    [CreateAssetMenu(fileName = "FortuneStatData", menuName = "Data/Attribute/Stat/FortuneStatData", order = 0)]
     public sealed class FortuneStatData : StatData
     {
-        public FloatReference PositiveEventChanceMultiplier;
+        
     } 
 }
