@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c34cd20e7d50941adb9d03aecd580d, type: 3}
+  m_Name: StatsData
+  m_EditorClassIdentifier: 
+  AgilityStatData: {fileID: 11400000, guid: 33e58cd0f46481a4ea13901388cc5eac, type: 2}
+  AlertnessStatData: {fileID: 11400000, guid: 3c4b1344d76412146b308090896cf6d9, type: 2}
+  AwarenessStatData: {fileID: 11400000, guid: 497622a019ac1ea408212c0c54c01ec4, type: 2}
+  BodyStatData: {fileID: 11400000, guid: 25f56ac3c38fc7444b10f57c93f9ca99, type: 2}
+  BrawnStatData: {fileID: 11400000, guid: 603172d2b807c114ea7be1cdd57cdc3c, type: 2}
+  CautiousnessStatData: {fileID: 11400000, guid: 8d8c5e80cd9f32440b75702afb2080e4, type: 2}
+  ChanceStatData: {fileID: 11400000, guid: 7f5d9db23ea1d0b47817cc6ac7116269, type: 2}
+  CharmStatData: {fileID: 11400000, guid: e68420238388c8248869302ec68f7729, type: 2}
+  EgoStatData: {fileID: 11400000, guid: d84ae4bb97d2ad743a7df3a3d2a737a3, type: 2}
+  EnduranceStatData: {fileID: 11400000, guid: 0fed91ecb439b4f49b770355c467f1cd, type: 2}
+  FateStatData: {fileID: 11400000, guid: 280713bca95e39b47ab15975b1b81543, type: 2}
+  FortitudeStatData: {fileID: 11400000, guid: f800bad465dee4a408ce8635bbd20cea, type: 2}
+  FortuneStatData: {fileID: 11400000, guid: 361ec0047df70a24ca83571f6599d0d0, type: 2}
+  IntellectStatData: {fileID: 11400000, guid: 19675d9edcb908544880210cc735d027, type: 2}
+  KnowledgeStatData: {fileID: 11400000, guid: c0437dee1d56567419c06c88364941ef, type: 2}
+  MightStatData: {fileID: 11400000, guid: 46fbc22d82a21824280da37e4c225c74, type: 2}
+  MindStatData: {fileID: 11400000, guid: fad70f6a6c12f494d8bfdd673f0abfce, type: 2}
+  PersonalityStatData: {fileID: 11400000, guid: b1942f1da706b004ba0623d053d82155, type: 2}
+  PowerStatData: {fileID: 11400000, guid: 9a385d34d5d0c4a4095f8069eb81a52e, type: 2}
+  PresenceStatData: {fileID: 11400000, guid: c0b6213614b89c841b2f4af1ab8956d5, type: 2}
+  PsycheStatData: {fileID: 11400000, guid: 3cd1b097b152ef84691878dbb712b63e, type: 2}
+  QuicknessStatData: {fileID: 11400000, guid: e5139e169995f954fb7274cb600845b1, type: 2}
+  RecoveryStatData: {fileID: 11400000, guid: 8ac8d978fa35c4243ad3328f750d4096, type: 2}
+  ReflexesStatData: {fileID: 11400000, guid: 7e5ffbb1b97603349aead1331d916f5f, type: 2}
+  ResilienceStatData: {fileID: 11400000, guid: d58e0d51dae09f94abafeeaa8367c6d5, type: 2}
+  ResistanceStatData: {fileID: 11400000, guid: 3511cc9a38ccea54cac4b2e5f53595c6, type: 2}
+  ResolveStatData: {fileID: 11400000, guid: ddf5fa6f0e1caef4597eda82e8eab4de, type: 2}
+  SanityStatData: {fileID: 11400000, guid: c5a3d35a0e9bbe6408826487a328a9e3, type: 2}
+  SenseStatData: {fileID: 11400000, guid: d81a13979a212ed4ab605ab8b308dc2b, type: 2}
+  SocialStatData: {fileID: 11400000, guid: 6d9dc438cbe54d642980433f0d55cd9f, type: 2}
+  SpiritStatData: {fileID: 11400000, guid: 9c34310330a2c4844857b84464503b43, type: 2}
+  StaminaStatData: {fileID: 11400000, guid: c084ccfcffdafad47bfa9020dbdae6a3, type: 2}
+  VitalityStatData: {fileID: 11400000, guid: f191d01ecfc3ff742ba5021822916aee, type: 2}
+  WitsStatData: {fileID: 11400000, guid: 44f3ffefca8bd5746bafb48f920a0d2b, type: 2}
