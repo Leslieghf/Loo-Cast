@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LooCast.Data.Runtime.Attribute.Stat
+namespace LooCast.Data.Runtime.Attribute
 {
-    public abstract class StatRuntimeData : ScriptableObject
+    public abstract class AttributeRuntimeData : ScriptableObject
     {
         public IntReference Level;
         public IntReference MaxLevel;

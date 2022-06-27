@@ -17,7 +17,7 @@ namespace LooCast.Attribute
 
         public virtual void Initialize()
         {
-            name = this.GetType().Name;
+            name = GetType().Name;
             onLevelChanged = new UnityEvent();
             onMaxLevelChanged = new UnityEvent();
         }
@@ -70,26 +70,26 @@ namespace LooCast.Attribute
             int currentLevel = GetLevel();
             int cost = 0;
             int start;
-            int bound;
+            int end;
             bool isRefund = false;
 
             if (targetLevel < currentLevel)
             {
                 start = targetLevel + 1;
-                bound = currentLevel;
+                end = currentLevel;
                 isRefund = true;
             }
             else if (targetLevel > currentLevel)
             {
                 start = currentLevel + 1;
-                bound = targetLevel;
+                end = targetLevel;
             }
             else
             {
                 return 0;
             }
 
-            for (int i = start; i <= bound; i++)
+            for (int i = start; i <= end; i++)
             {
                 cost += i;
             }

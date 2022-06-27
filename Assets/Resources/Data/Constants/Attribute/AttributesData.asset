@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3232077ccd955a4d85ac392046e501b, type: 3}
+  m_Name: AttributesData
+  m_EditorClassIdentifier: 
+  CharismaAttributeData: {fileID: 11400000, guid: 7625df851eecf894c85639387d6a7f6e, type: 2}
+  ConstitutionAttributeData: {fileID: 11400000, guid: 887d9deafb020e2499112dce7e0a30a3, type: 2}
+  DefenseAttributeData: {fileID: 11400000, guid: 69fc640c86b6a9943a7f8b8175351e67, type: 2}
+  DexterityAttributeData: {fileID: 11400000, guid: b23e83af6c54f1a4eafc6e8c514966b4, type: 2}
+  IntelligenceAttributeData: {fileID: 11400000, guid: 5b9b7389e833f9f43b504201c7da6e63, type: 2}
+  LuckAttributeData: {fileID: 11400000, guid: b6e60d6301e392c4b9330014a690f714, type: 2}
+  PerceptionAttributeData: {fileID: 11400000, guid: a4017689786ad3547a9cd0f9ab37342e, type: 2}
+  StrengthAttributeData: {fileID: 11400000, guid: 512dbb23af93c6546b790ed7a1fdf919, type: 2}
+  WillpowerAttributeData: {fileID: 11400000, guid: 0e575efc21627f548bdeb61d73e6031d, type: 2}
+  WisdomAttributeData: {fileID: 11400000, guid: 03b2de97027b6d54f9982b14d059b2d2, type: 2}
