@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73b333ad6ba4b848b9cebe1e36adc6d, type: 3}
   m_Name: EffectValueFormula
   m_EditorClassIdentifier: 
-  Value: '{Level} * 5'
+  value: '{Level} * 5'

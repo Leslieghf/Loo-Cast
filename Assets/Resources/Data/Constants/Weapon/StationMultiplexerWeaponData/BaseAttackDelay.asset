@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fad75b4a288ba040a3819c92b883d4c, type: 3}
   m_Name: BaseAttackDelay
   m_EditorClassIdentifier: 
-  Value: 0.25
+  value: 0.25
