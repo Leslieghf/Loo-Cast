@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: e2e22339c8e73cc45b9680586cb54d2a, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 23c734e22d6155548942c6b2c8699e70, type: 2}
   MovementSpeedMultiplier:
     UseConstant: 0
     ConstantValue: 0

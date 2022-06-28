@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: dfb78be313e794e4b8248cc627b37b24, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: eb79bcb6804c2b1489b56d3ec970769a, type: 2}
   ProjectileSpeedMultiplier:
     UseConstant: 0
     ConstantValue: 0

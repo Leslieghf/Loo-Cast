@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: b042fceb4f05b6441996af203ed923bb, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 8cba66f801b5a3a4da0dfd575bf5a981, type: 2}
   EnergyMultiplier:
     UseConstant: 0
     ConstantValue: 0

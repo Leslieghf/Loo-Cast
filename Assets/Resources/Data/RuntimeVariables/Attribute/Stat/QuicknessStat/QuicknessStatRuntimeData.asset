@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: fcfae76309a399041bccb75405afb9c8, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 74dc0123174ace942b5a9a2366b4db84, type: 2}
   AttackDelayMultiplier:
     UseConstant: 0
     ConstantValue: 0

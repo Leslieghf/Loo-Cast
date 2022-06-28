@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 41efa8be9aba0504ab70e9b742870e6e, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 11b9754139e97694584f88b0f1427c5c, type: 2}
   PositiveEventChanceMultiplier:
     UseConstant: 0
     ConstantValue: 0

@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 218394bbb7ebf5d4aa5cd943dcaa8dcc, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 6d8d1b955dffdbc449c36396e17eae12, type: 2}
   PiercingIncrease:
     UseConstant: 0
     ConstantValue: 0

@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: e047f16af0c7b55409115be641b48201, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: c856130694855ab408cbbc1f6fae8cbd, type: 2}
   ConsecutiveProjectileDelayMultiplier:
     UseConstant: 0
     ConstantValue: 0

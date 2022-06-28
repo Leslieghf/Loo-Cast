@@ -16,6 +16,10 @@ MonoBehaviour:
     UseConstant: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: 006a0571486c3d546a6ce08c14617176, type: 2}
+  MaxLevel:
+    UseConstant: 0
+    ConstantValue: 0
+    Variable: {fileID: 11400000, guid: 606d065d1bf1d7d44aa3a74eedcf8cf8, type: 2}
   HealthMultiplier:
     UseConstant: 0
     ConstantValue: 0
