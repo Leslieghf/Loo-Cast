@@ -10,6 +10,8 @@ namespace LooCast.Orb
 {
     public class ExperienceOrb : ExtendedMonoBehaviour
     {
+        public Stats Stats;
+
         public bool isMagnetized = false;
         public float magnetizedSpeedMultiplier;
         public float maxMagnetizedSpeed;
@@ -42,7 +44,7 @@ namespace LooCast.Orb
             playerExperience = playerObject.GetComponent<LooCast.Experience.Experience>();
             playerCollider = playerObject.GetComponent<CircleCollider2D>();
             soundHandler = GameObject.FindObjectOfType<GameSoundHandler>();
-            pickupRangeMultiplier = ((MindStat)Stats.GetStat("MindStat")).RangeMultiplier;
+            pickupRangeMultiplier = Stats.RangeMultiplier;
             isVisible = true;
         }
 

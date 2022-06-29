@@ -11,6 +11,8 @@ namespace LooCast.Orb
 
     public class MagnetOrb : ExtendedMonoBehaviour
     {
+        public Stats Stats;
+
         private GameObject playerObject;
         private CircleCollider2D playerCollider;
         private GameSoundHandler soundHandler;
@@ -23,7 +25,7 @@ namespace LooCast.Orb
             playerObject = GameObject.FindGameObjectWithTag("Player");
             playerCollider = playerObject.GetComponent<CircleCollider2D>();
             soundHandler = FindObjectOfType<GameSoundHandler>();
-            pickupRangeMultiplier = ((MindStat)Stats.GetStat("MindStat")).RangeMultiplier;
+            pickupRangeMultiplier = Stats.RangeMultiplier;
         }
 
         protected override void Cycle()

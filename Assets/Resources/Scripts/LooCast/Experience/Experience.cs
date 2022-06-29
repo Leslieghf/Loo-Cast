@@ -10,11 +10,10 @@ namespace LooCast.Experience
 {
     public class Experience : MonoBehaviour
     {
-        //[HideInInspector]
+        public Stats Stats;
+        
         public float experience = 0;
-        //[HideInInspector]
         public float levelExperienceMax = 10;
-        //[HideInInspector]
         public int level = 0;
         private float experienceMultiplier;
         private float levelExperienceMultiplier;
@@ -31,8 +30,8 @@ namespace LooCast.Experience
         public virtual void Initialize()
         {
             experienceBar.Initialize(0, levelExperienceMax);
-            experienceMultiplier = ((IntellectStat)Stats.GetStat("IntellectStat")).ExperienceMultiplier;
-            levelExperienceMultiplier = ((KnowledgeStat)Stats.GetStat("KnowledgeStat")).LevelExperienceMaxMultiplier;
+            experienceMultiplier = Stats.ExperienceMultiplier;
+            levelExperienceMultiplier = Stats.LevelExperienceMaxMultiplier;
         }
 
         public void AddExperience(float xp)

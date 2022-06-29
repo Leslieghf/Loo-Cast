@@ -14,6 +14,8 @@ namespace LooCast.Health
 
     public class PlayerHealth : Health
     {
+        public Stats Stats;
+
         private HealthBar healthBar;
         private GameSoundHandler soundHandler;
         private DeathScreen deathScreen;

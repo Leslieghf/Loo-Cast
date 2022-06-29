@@ -12,6 +12,8 @@ namespace LooCast.Movement
 
     public class PlayerMovement : Movement
     {
+        public Stats Stats;
+
         public UnityEvent onStartAccelerating;
         public UnityEvent onStopAccelerating;
         public EnergyBar energyBar;
@@ -143,7 +145,7 @@ namespace LooCast.Movement
 
             if (!isEnergyDepleted)
             {
-                rigidbody.AddForce(new Vector2(axis[0], axis[1]).normalized * movementSpeed * ((AgilityStat)Stats.GetStat("AgilityStat")).MovementSpeedMultiplier * Constants.INERTIAL_COEFFICIENT); 
+                rigidbody.AddForce(new Vector2(axis[0], axis[1]).normalized * movementSpeed * Stats.MovementSpeedMultiplier * Constants.INERTIAL_COEFFICIENT); 
             }
         }
     } 

@@ -13,6 +13,8 @@ namespace LooCast.Health
 
     public class EnemyHealth : Health
     {
+        public Stats Stats;
+
         protected GameSoundHandler soundHandler;
         protected float magnetDropChance;
         protected float experienceDropChance;

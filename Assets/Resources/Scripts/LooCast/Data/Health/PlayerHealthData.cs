@@ -10,6 +10,8 @@ namespace LooCast.Data.Health
     [CreateAssetMenu(fileName = "PlayerHealthData", menuName = "Data/Health/PlayerHealthData", order = 0)]
     public class PlayerHealthData : StatData
     {
+        public Stats Stats;
+
         public float MaxHealth
         {
             get

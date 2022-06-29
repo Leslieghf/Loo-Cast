@@ -18,6 +18,7 @@ namespace LooCast.Player
     [RequireComponent(typeof(PlayerHealth), typeof(Targeting), typeof(PlayerMovement)), DisallowMultipleComponent]
     public class Player : ExtendedMonoBehaviour
     {
+        public Stats Stats;
         public PlayerData Data;
         public PlayerHealth Health { get; private set; }
         public Targeting Targeting { get; private set; }

@@ -16,6 +16,8 @@ namespace LooCast.Weapon
         protected Targeting targeting;
         protected GameSoundHandler soundHandler;
 
+        public Stats Stats;
+
         public float baseDamage { get; protected set; }
         public float baseCritChance { get; protected set; }
         public float baseCritDamage { get; protected set; }

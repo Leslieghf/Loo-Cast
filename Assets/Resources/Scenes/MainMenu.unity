@@ -571,7 +571,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314757238}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -586,7 +586,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1314757238}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &19202297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,6 +1061,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &26767949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,6 +1436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &41412008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &57254335
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,6 +1683,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &57254338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2367,6 +2376,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &81223646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2990,6 +3002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &108490501
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,6 +3309,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &126323239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3453,6 +3469,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &127692061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3669,6 +3688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &130180660
 GameObject:
   m_ObjectHideFlags: 0
@@ -3876,6 +3896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &134388372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4568,6 +4589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &161055608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4725,6 +4749,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &161171606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4882,6 +4909,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &165060088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5417,6 +5447,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &189075653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5887,6 +5920,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &208855740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6231,6 +6266,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &214360597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7147,19 +7185,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 262317668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 1556056770}
-  statPanels:
-  - {fileID: 923066587}
-  - {fileID: 13031907}
-  - {fileID: 879041427}
-  - {fileID: 108490503}
-  tokensValue: {fileID: 1829100352}
-  coinsValue: {fileID: 693114670}
-  infoPanel: {fileID: 345930388}
-  statsListPanel: {fileID: 0}
 --- !u!1 &264739157
 GameObject:
   m_ObjectHideFlags: 0
@@ -7603,6 +7631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &274568226
 GameObject:
   m_ObjectHideFlags: 0
@@ -7738,6 +7767,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &274997690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8447,6 +8479,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &307590234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8705,6 +8740,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &313196479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9262,6 +9300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &345930386
 GameObject:
   m_ObjectHideFlags: 0
@@ -9512,7 +9551,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1076904636}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -9527,7 +9566,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1076904636}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -10051,8 +10090,8 @@ MonoBehaviour:
   onTabSelected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 563514158}
-        m_TargetAssemblyTypeName: StatsTab, UI
+      - m_Target: {fileID: 563514161}
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -10066,8 +10105,8 @@ MonoBehaviour:
   onTabDeselected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 563514158}
-        m_TargetAssemblyTypeName: StatsTab, UI
+      - m_Target: {fileID: 563514161}
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -10235,6 +10274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &378399216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11094,6 +11136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &408175192
 GameObject:
   m_ObjectHideFlags: 0
@@ -11320,6 +11363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &419463290
 GameObject:
   m_ObjectHideFlags: 0
@@ -11622,6 +11666,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &435527354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12334,6 +12381,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &458290545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12892,6 +12942,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &478394703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13201,6 +13254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &493939277
 GameObject:
   m_ObjectHideFlags: 0
@@ -13585,18 +13639,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 498968810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 774079586}
-  statPanels:
-  - {fileID: 346116127}
-  - {fileID: 92332712}
-  - {fileID: 711224860}
-  tokensValue: {fileID: 2081999939}
-  coinsValue: {fileID: 213131320}
-  infoPanel: {fileID: 924096500}
-  statsListPanel: {fileID: 0}
 --- !u!1 &502604779
 GameObject:
   m_ObjectHideFlags: 0
@@ -13652,6 +13697,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &502604782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13967,6 +14015,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &516377451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15198,7 +15249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563514159}
   - component: {fileID: 563514160}
-  - component: {fileID: 563514158}
+  - component: {fileID: 563514161}
   m_Layer: 5
   m_Name: LuckTab
   m_TagString: Untagged
@@ -15206,27 +15257,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &563514158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563514157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attributePanel: {fileID: 239915402}
-  statPanels:
-  - {fileID: 1118188091}
-  - {fileID: 1184574786}
-  - {fileID: 747188029}
-  tokensValue: {fileID: 660028524}
-  coinsValue: {fileID: 103720822}
-  infoPanel: {fileID: 1237230448}
-  statsListPanel: {fileID: 0}
 --- !u!224 &563514159
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15278,6 +15308,18 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &563514161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563514157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &563584258
 GameObject:
   m_ObjectHideFlags: 0
@@ -15698,6 +15740,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &582840125
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15935,6 +15980,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &593586074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16326,6 +16374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &616613436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16563,6 +16614,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &623723879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17033,7 +17087,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 262317671}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -17048,7 +17102,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 262317671}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -17275,6 +17329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &640811076
 GameObject:
   m_ObjectHideFlags: 0
@@ -17330,6 +17385,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &640811079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17928,6 +17986,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &660903621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18085,6 +18146,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &663199398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18358,18 +18422,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 688329867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 299541847}
-  statPanels:
-  - {fileID: 4243448}
-  - {fileID: 1068746520}
-  - {fileID: 1760746678}
-  tokensValue: {fileID: 280876985}
-  coinsValue: {fileID: 1051670588}
-  infoPanel: {fileID: 1091314773}
-  statsListPanel: {fileID: 0}
 --- !u!1 &693114668
 GameObject:
   m_ObjectHideFlags: 0
@@ -18772,6 +18827,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &701722861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18929,6 +18987,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &707595414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19333,6 +19394,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &712667010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19549,6 +19613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &728117074
 GameObject:
   m_ObjectHideFlags: 0
@@ -19895,6 +19960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &739760825
 GameObject:
   m_ObjectHideFlags: 0
@@ -20848,6 +20914,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &778653112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21223,6 +21292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &797913017
 GameObject:
   m_ObjectHideFlags: 0
@@ -21449,7 +21519,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 688329870}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -21464,7 +21534,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 688329870}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -22127,6 +22197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &837050627
 GameObject:
   m_ObjectHideFlags: 0
@@ -22260,6 +22331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &837869208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22556,6 +22630,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &852103362
 GameObject:
   m_ObjectHideFlags: 0
@@ -23058,6 +23133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &865263712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23492,18 +23570,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 875586436}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 1325778839}
-  statPanels:
-  - {fileID: 837050629}
-  - {fileID: 224852404}
-  - {fileID: 2082874479}
-  tokensValue: {fileID: 479867961}
-  coinsValue: {fileID: 936399381}
-  infoPanel: {fileID: 408175194}
-  statsListPanel: {fileID: 0}
 --- !u!1 &879041425
 GameObject:
   m_ObjectHideFlags: 0
@@ -23642,7 +23711,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 498968813}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -23657,7 +23726,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 498968813}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -23941,18 +24010,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 908405411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 1967607769}
-  statPanels:
-  - {fileID: 748734905}
-  - {fileID: 1245288105}
-  - {fileID: 194851004}
-  tokensValue: {fileID: 235869938}
-  coinsValue: {fileID: 852103364}
-  infoPanel: {fileID: 1148204347}
-  statsListPanel: {fileID: 0}
 --- !u!1 &911222911
 GameObject:
   m_ObjectHideFlags: 0
@@ -24187,19 +24247,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 913106405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 1967924926}
-  statPanels:
-  - {fileID: 924904009}
-  - {fileID: 1980412716}
-  - {fileID: 1960242944}
-  - {fileID: 202889349}
-  tokensValue: {fileID: 941088774}
-  coinsValue: {fileID: 833628669}
-  infoPanel: {fileID: 1046185265}
-  statsListPanel: {fileID: 0}
 --- !u!1 &919288604
 GameObject:
   m_ObjectHideFlags: 0
@@ -24255,6 +24305,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &919288607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25674,6 +25727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &996209407
 GameObject:
   m_ObjectHideFlags: 0
@@ -26104,7 +26158,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 913106408}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -26119,7 +26173,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 913106408}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -27339,6 +27393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1068746518
 GameObject:
   m_ObjectHideFlags: 0
@@ -27588,19 +27643,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1076904633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 1912844604}
-  statPanels:
-  - {fileID: 152912735}
-  - {fileID: 1659454047}
-  - {fileID: 2067770099}
-  - {fileID: 1927025911}
-  tokensValue: {fileID: 438708964}
-  coinsValue: {fileID: 365148026}
-  infoPanel: {fileID: 149168332}
-  statsListPanel: {fileID: 0}
 --- !u!1 &1089719330
 GameObject:
   m_ObjectHideFlags: 0
@@ -27848,6 +27893,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1095775773
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28809,6 +28857,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1134358624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29502,6 +29553,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1161383890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31148,6 +31202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1246404303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32376,6 +32433,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1289731613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32906,6 +32966,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1308555305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33068,7 +33131,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 875586439}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -33083,7 +33146,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 875586439}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -33290,18 +33353,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1314757235}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 2128748035}
-  statPanels:
-  - {fileID: 1395426484}
-  - {fileID: 598447001}
-  - {fileID: 511413811}
-  tokensValue: {fileID: 2013393586}
-  coinsValue: {fileID: 1876844565}
-  infoPanel: {fileID: 1336163237}
-  statsListPanel: {fileID: 0}
 --- !u!1 &1315842175
 GameObject:
   m_ObjectHideFlags: 0
@@ -34214,6 +34268,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1373882017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34451,6 +34508,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1378217481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34797,6 +34857,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1392278032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35192,6 +35255,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1398662230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35978,6 +36044,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1433107678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36454,6 +36523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1448929821
 GameObject:
   m_ObjectHideFlags: 0
@@ -36682,6 +36752,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1452559596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37092,6 +37165,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1471577430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37657,6 +37733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1518093851
 GameObject:
   m_ObjectHideFlags: 0
@@ -38482,6 +38559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1550272636
 GameObject:
   m_ObjectHideFlags: 0
@@ -39175,6 +39253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1593746606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39332,6 +39413,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1610922252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39721,6 +39805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1620341281
 GameObject:
   m_ObjectHideFlags: 0
@@ -40078,6 +40163,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1640726781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40308,6 +40395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1642169241
 GameObject:
   m_ObjectHideFlags: 0
@@ -41456,6 +41544,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1680849965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41770,7 +41860,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2139761718}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -41785,7 +41875,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2139761718}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -42273,6 +42363,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1701185282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43352,6 +43445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1734959089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43589,6 +43685,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1737907945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43959,6 +44058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1750774781
 GameObject:
   m_ObjectHideFlags: 0
@@ -44015,6 +44115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1750774784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44265,6 +44367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1764279341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44436,6 +44540,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1764785090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44670,6 +44777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1770185767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44900,6 +45009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1774813648
 GameObject:
   m_ObjectHideFlags: 0
@@ -45048,6 +45158,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1776967540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45205,6 +45318,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1776998382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45589,6 +45705,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1789538371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45746,6 +45865,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1795759531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45956,6 +46078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!114 &1805313259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46173,6 +46296,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1806507074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46331,6 +46457,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1807842860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46503,6 +46631,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1808463854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46986,6 +47116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1825651200
 GameObject:
   m_ObjectHideFlags: 0
@@ -47041,6 +47172,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1825651203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47371,6 +47505,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1829986333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47611,6 +47748,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1836328889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47768,6 +47908,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1846691807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47925,6 +48068,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1847922675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48206,6 +48352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &1850625029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48670,6 +48818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1872784704
 GameObject:
   m_ObjectHideFlags: 0
@@ -49714,6 +49863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1924309582
 GameObject:
   m_ObjectHideFlags: 0
@@ -49920,19 +50070,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 8
-  statsTabs:
-  - {fileID: 2139761718}
-  - {fileID: 1076904636}
-  - {fileID: 498968813}
-  - {fileID: 688329870}
-  - {fileID: 1314757238}
-  - {fileID: 908405414}
-  - {fileID: 913106408}
-  - {fileID: 262317671}
-  - {fileID: 875586439}
-  - {fileID: 563514158}
-  statsListPanel: {fileID: 0}
-  tabGroup: {fileID: 1573239236}
 --- !u!222 &1929919551
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -50484,6 +50621,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &1960242942
 GameObject:
   m_ObjectHideFlags: 0
@@ -51307,7 +51445,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 908405414}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
@@ -51322,7 +51460,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 908405414}
-        m_TargetAssemblyTypeName: StatsTab, UI
+        m_TargetAssemblyTypeName: LooCast.UI.Tab.Tab, Assembly-CSharp
         m_MethodName: Hide
         m_Mode: 1
         m_Arguments:
@@ -51490,6 +51628,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &1987689614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51820,6 +51961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &2002815854
 GameObject:
   m_ObjectHideFlags: 0
@@ -52132,6 +52274,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &2005772618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52403,6 +52548,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: 1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &2009937410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52810,6 +52958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeIncrement: 1
+  attribute: {fileID: 0}
+  tokensValue: {fileID: 0}
 --- !u!114 &2017594011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53948,6 +54098,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &2060138776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54204,6 +54357,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &2061306831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55232,6 +55388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &2095085810
 GameObject:
   m_ObjectHideFlags: 0
@@ -55346,6 +55503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1855ce117ff66a541a9d3bbb4ecf41a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stat: {fileID: 0}
 --- !u!1 &2113447273
 GameObject:
   m_ObjectHideFlags: 0
@@ -55515,6 +55673,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statIncrement: -1
+  stat: {fileID: 0}
+  coinsValue: {fileID: 0}
+  statListValue: {fileID: 0}
 --- !u!114 &2114399710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56230,19 +56391,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2139761715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0085d7f0623e1024eb4525ed7a5a958c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b6ccc87389b085429390b2960fd5c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attributePanel: {fileID: 1300989119}
-  statPanels:
-  - {fileID: 1298228057}
-  - {fileID: 1443409612}
-  - {fileID: 1866071540}
-  - {fileID: 1742119484}
-  tokensValue: {fileID: 229892347}
-  coinsValue: {fileID: 2089835507}
-  infoPanel: {fileID: 541208044}
-  statsListPanel: {fileID: 0}
 --- !u!1 &2145085975
 GameObject:
   m_ObjectHideFlags: 0

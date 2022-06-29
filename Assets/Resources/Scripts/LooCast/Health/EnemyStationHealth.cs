@@ -11,6 +11,8 @@ namespace LooCast.Health
 
     public class EnemyStationHealth : StationHealth
     {
+        public Stats Stats;
+
         protected float experienceDropChance;
         protected float experienceDropAmount;
         protected GameObject experienceOrbPrefab;
