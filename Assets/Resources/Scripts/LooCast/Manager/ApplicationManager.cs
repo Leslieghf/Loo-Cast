@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using LooCast.Attribute;
 using LooCast.UI.Screen;
 
@@ -11,10 +10,8 @@ namespace LooCast.Manager
     {
         public static ApplicationManager Instance { get; private set; }
 
-        [SerializeField]
-        private LoadingScreen loadingScreen;
-        [SerializeField]
-        private InitializationSceneManager initializationSceneManager;
+        [SerializeField] private LoadingScreen loadingScreen;
+        [SerializeField] private InitializationSceneManager initializationSceneManager;
 
         private void Awake()
         {
@@ -36,9 +33,6 @@ namespace LooCast.Manager
         private void Initialize()
         {
             DontDestroyOnLoad(this);
-
-            //Initialize Static Classes
-            Attributes.Initialize();
 
             //Initialize Initialization Scene
             initializationSceneManager.Initialize();

@@ -7,21 +7,21 @@ namespace LooCast.UI.Level
 {
     public class AttributeLevel : Level
     {
-        protected LooCast.Attribute.Attribute attribute;
+        private Attribute.Attribute attribute;
 
-        public virtual void Initialize(LooCast.Attribute.Attribute attribute, int value, int maxValue)
+        public virtual void Initialize(Attribute.Attribute attribute, int value, int maxValue)
         {
             base.Initialize(value, maxValue);
             this.attribute = attribute;
-            attribute.onLevelChanged.AddListener(Refresh);
-            attribute.onMaxLevelChanged.AddListener(Refresh);
+            attribute.Level.OnValueChanged.AddListener(Refresh);
+            attribute.MaxLevel.OnValueChanged.AddListener(Refresh);
             Refresh();
         }
 
         public override void Refresh()
         {
-            base.SetValue(attribute.GetLevel());
-            base.SetMaxValue(attribute.GetMaxLevel());
+            base.SetValue(attribute.Level.Value);
+            base.SetMaxValue(attribute.MaxLevel.Value);
             base.Refresh();
         }
 

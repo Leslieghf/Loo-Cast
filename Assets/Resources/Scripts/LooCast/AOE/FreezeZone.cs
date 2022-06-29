@@ -9,6 +9,7 @@ namespace LooCast.AOE
 {
     public class FreezeZone : ExtendedMonoBehaviour
     {
+        [SerializeField] private Stats stats;
         private Animator animator;
         private Vector2 targetPos;
         private float movementSpeed = 100.0f;
@@ -41,8 +42,8 @@ namespace LooCast.AOE
             deployTime = Resources.Load<AnimationClip>("Animations/AOEZonePopup").length;
             retractTime = Resources.Load<AnimationClip>("Animations/AOEZoneDisappear").length;
 
-            baseScale *= Stats.ProjectileSizeMultiplier;
-            movementSpeed *= Stats.ProjectileSpeedMultiplier;
+            baseScale *= stats.Sanity.ProjectileSizeMultiplier.Value;
+            movementSpeed *= stats.Personality.ProjectileSpeedMultiplier.Value;
             
             transform.localScale = baseScale * 0.1f; 
         }

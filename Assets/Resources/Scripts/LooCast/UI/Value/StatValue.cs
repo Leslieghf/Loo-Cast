@@ -8,20 +8,11 @@ namespace LooCast.UI.Value
 {
     public class StatValue : Value
     {
-        protected Stat stat;
-
-        public virtual void Initialize(Stat stat, int value, int minValue = 0)
-        {
-            base.Initialize(value, minValue);
-            this.stat = stat;
-            stat.onLevelChanged.AddListener(Refresh);
-            stat.onMaxLevelChanged.AddListener(Refresh);
-            Refresh();
-        }
+        public Stat stat;
 
         public override void Refresh()
         {
-            base.SetValue(stat.GetLevel());
+            base.SetValue(stat.Level.Value);
             base.Refresh();
         }
 

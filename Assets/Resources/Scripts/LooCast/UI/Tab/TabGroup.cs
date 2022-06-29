@@ -12,7 +12,7 @@ namespace LooCast.UI.Tab
 
         public virtual void Initialize()
         {
-            foreach (LooCast.UI.Button.TabButton tabButton in tabButtons)
+            foreach (Button.TabButton tabButton in tabButtons)
             {
                 tabButton.Initialize();
             }

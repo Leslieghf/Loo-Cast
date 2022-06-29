@@ -5,20 +5,10 @@ using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
+    using Data;
+
     public class VitalityStat : Stat
     {
-        public float HealthMultiplier
-        {
-            get
-            {
-                float.TryParse(new DataTable().Compute($"1 + {Level}", "").ToString(), out float value);
-                return value;
-            }
-        }
-
-        public override string ValueToString()
-        {
-            return $"+{new DataTable().Compute($"{Level} * 100", "")}%";
-        }
+        public FloatReference HealthMultiplier;
     }
 }

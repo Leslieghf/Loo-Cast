@@ -13,15 +13,15 @@ namespace LooCast.UI.Level
         {
             base.Initialize(value, maxValue);
             this.stat = stat;
-            stat.onLevelChanged.AddListener(Refresh);
-            stat.onMaxLevelChanged.AddListener(Refresh);
+            stat.Level.OnValueChanged.AddListener(Refresh);
+            stat.MaxLevel.OnValueChanged.AddListener(Refresh);
             Refresh();
         }
 
         public override void Refresh()
         {
-            base.SetValue(stat.GetLevel());
-            base.SetMaxValue(stat.GetMaxLevel());
+            base.SetValue(stat.Level.Value);
+            base.SetMaxValue(stat.MaxLevel.Value);
             base.Refresh();
         }
 

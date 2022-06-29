@@ -5,20 +5,10 @@ using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
+    using Data;
+
     public class ResilienceStat : Stat
     {
-        public int ShieldStrengthIncrease
-        {
-            get
-            {
-                int.TryParse(new DataTable().Compute($"{Level}", "").ToString(), out int value);
-                return value;
-            }
-        }
-
-        public override string ValueToString()
-        {
-            return $"+{new DataTable().Compute($"{Level}", "")}";
-        }
+        public IntReference ShieldStrengthIncrease;
     } 
 }

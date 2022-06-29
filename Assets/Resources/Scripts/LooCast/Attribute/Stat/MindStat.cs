@@ -5,20 +5,10 @@ using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
+    using Data;
+
     public class MindStat : Stat
     {
-        public float RangeMultiplier
-        {
-            get
-            {
-                float.TryParse(new DataTable().Compute($"1 + ({Level} * 0.1)", "").ToString(), out float value);
-                return value;
-            }
-        }
-
-        public override string ValueToString()
-        {
-            return $"+{new DataTable().Compute($"{Level} * 10", "")}%";
-        }
+        public FloatReference RangeMultiplier;
     } 
 }

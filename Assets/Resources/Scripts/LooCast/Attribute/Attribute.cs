@@ -1,73 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using LooCast.Currency;
 
 namespace LooCast.Attribute
 {
-    using Stat;
+    using Data;
 
-    public abstract class Attribute
+    public abstract class Attribute : ScriptableObject
     {
-        public UnityEvent onLevelChanged;
-        public UnityEvent onMaxLevelChanged;
-        protected string name;
-        protected Stat.Stat[] stats;
-
-        public virtual void Initialize()
-        {
-            name = GetType().Name;
-            onLevelChanged = new UnityEvent();
-            onMaxLevelChanged = new UnityEvent();
-        }
-
-        public virtual void SetLevel(int level)
-        {
-            PlayerPrefs.SetInt($"{name}.level", level);
-            for (int i = 0; i < stats.Length; i++)
-            {
-                stats[i].SetMaxLevel(level);
-            }
-            onLevelChanged.Invoke();
-        }
-
-        public virtual void SetMaxLevel(int maxLevel)
-        {
-            PlayerPrefs.SetInt($"{name}.maxLevel", maxLevel);
-            onMaxLevelChanged.Invoke();
-        }
-
-        public int GetLevel()
-        {
-            int level;
-            if (!PlayerPrefs.HasKey($"{name}.level"))
-            {
-                SetLevel(0);
-            }
-            level = PlayerPrefs.GetInt($"{name}.level");
-            return level;
-        }
-
-        public int GetMaxLevel()
-        {
-            int maxLevel;
-            if (!PlayerPrefs.HasKey($"{name}.maxLevel"))
-            {
-                SetMaxLevel(10);
-            }
-            maxLevel = PlayerPrefs.GetInt($"{name}.maxLevel");
-            return maxLevel;
-        }
-
-        public string GetName()
-        {
-            return name;
-        }
+        public Stat.Stat[] stats;
+        public IntReference Level;
+        public IntReference MaxLevel;
+        public IntReference ProposedLevelChange;
 
         public int GetCost(int targetLevel)
         {
-            int currentLevel = GetLevel();
+            int currentLevel = Level.Value;
             int cost = 0;
             int start;
             int end;

@@ -31932,7 +31932,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1277980923}
   - component: {fileID: 1277980924}
-  - component: {fileID: 1277980922}
   m_Layer: 5
   m_Name: StatsListPanel
   m_TagString: Untagged
@@ -31940,53 +31939,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1277980922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277980921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c6fcfc541cd4a949b8e9b5480e4e7a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  values:
-  - {fileID: 984536753}
-  - {fileID: 1545452308}
-  - {fileID: 274150573}
-  - {fileID: 18808154}
-  - {fileID: 797518744}
-  - {fileID: 836746027}
-  - {fileID: 639039972}
-  - {fileID: 1445921506}
-  - {fileID: 1824411333}
-  - {fileID: 1868496936}
-  - {fileID: 38686964}
-  - {fileID: 1501326053}
-  - {fileID: 2091903406}
-  - {fileID: 106787902}
-  - {fileID: 724441341}
-  - {fileID: 1067666091}
-  - {fileID: 1772250451}
-  - {fileID: 405192456}
-  - {fileID: 1744731371}
-  - {fileID: 129645998}
-  - {fileID: 1641157882}
-  - {fileID: 2095085815}
-  - {fileID: 340696402}
-  - {fileID: 1620100050}
-  - {fileID: 1921901644}
-  - {fileID: 411961612}
-  - {fileID: 493693167}
-  - {fileID: 1954340466}
-  - {fileID: 2001975131}
-  - {fileID: 851899417}
-  - {fileID: 737689613}
-  - {fileID: 133208991}
-  - {fileID: 45677860}
-  - {fileID: 1805313258}
 --- !u!224 &1277980923
 RectTransform:
   m_ObjectHideFlags: 0
@@ -49979,7 +49931,7 @@ MonoBehaviour:
   - {fileID: 262317671}
   - {fileID: 875586439}
   - {fileID: 563514158}
-  statsListPanel: {fileID: 1277980922}
+  statsListPanel: {fileID: 0}
   tabGroup: {fileID: 1573239236}
 --- !u!222 &1929919551
 CanvasRenderer:
@@ -56470,6 +56422,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoadingScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 930307719972410625, guid: 6107bfedecba8974ea3045e3bdf5b348, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6107bfedecba8974ea3045e3bdf5b348, type: 3}
 --- !u!1001 &2426833024978651780
@@ -56482,6 +56438,10 @@ PrefabInstance:
     - target: {fileID: 2426833025820180160, guid: 89ce1aca24d4f6d4b8093f684b0a8363, type: 3}
       propertyPath: m_Name
       value: SettingsScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426833025820180160, guid: 89ce1aca24d4f6d4b8093f684b0a8363, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2426833025820180161, guid: 89ce1aca24d4f6d4b8093f684b0a8363, type: 3}
       propertyPath: m_Pivot.x

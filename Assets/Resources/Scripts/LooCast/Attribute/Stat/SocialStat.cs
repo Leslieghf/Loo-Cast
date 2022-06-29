@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace LooCast.Attribute.Stat
 {
+    using Data;
+
     public class SocialStat : Stat
     {
-        public override string ValueToString()
-        {
-            throw new System.NotImplementedException();
-        }
+        
     }
 }

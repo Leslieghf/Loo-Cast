@@ -5,20 +5,10 @@ using System.Data;
 
 namespace LooCast.Attribute.Stat
 {
+    using Data;
+
     public class ResolveStat : Stat
     {
-        public int PiercingIncrease
-        {
-            get
-            {
-                int.TryParse(new DataTable().Compute($"{Level}", "").ToString(), out int value);
-                return value;
-            }
-        }
-
-        public override string ValueToString()
-        {
-            return $"+{new DataTable().Compute($"{Level}", "")}";
-        }
+        public IntReference PiercingIncrease;
     } 
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LooCast.UI.Tab
 {
-    public abstract class Tab : MonoBehaviour
+    public class Tab : MonoBehaviour
     {
         public virtual void Show()
         {
