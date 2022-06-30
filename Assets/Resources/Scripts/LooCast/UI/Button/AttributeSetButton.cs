@@ -10,16 +10,16 @@ namespace LooCast.UI.Button
 
     public class AttributeSetButton : Button
     {
+        public Tokens Tokens;
         public int attributeIncrement;
         public Attribute attribute;
-        public TokensValue tokensValue;
 
         public override void OnClick()
         {
             int currentLevel = attribute.Level.Value;
             int targetLevel = currentLevel + attributeIncrement;
             int cost = attribute.GetCost(targetLevel);
-            int balance = Tokens.GetBalance();
+            int balance = Tokens.Balance.Value;
             int maxLevel = attribute.MaxLevel.Value;
             bool isValidPurchase = true;
 
@@ -30,13 +30,13 @@ namespace LooCast.UI.Button
 
             if (isValidPurchase)
             {
-                Tokens.SetBalance(balance - cost);
+                Tokens.Balance.Value = balance - cost;
                 attribute.Level.Value = targetLevel;
 
                 currentLevel = attribute.Level.Value;
                 targetLevel = currentLevel + attributeIncrement;
                 cost = attribute.GetCost(targetLevel);
-                balance = Tokens.GetBalance();
+                balance = Tokens.Balance.Value;
                 maxLevel = attribute.MaxLevel.Value;
 
                 if (cost > balance || currentLevel == targetLevel || targetLevel < 0 || targetLevel > maxLevel)
@@ -46,11 +46,11 @@ namespace LooCast.UI.Button
 
                 if (isValidPurchase)
                 {
-                    tokensValue.SetChange(-attribute.GetCost(attribute.Level.Value + attributeIncrement));
+                    attribute.ProposedLevelChange.Value = -attribute.GetCost(attribute.Level.Value + attributeIncrement);
                 }
                 else
                 {
-                    tokensValue.SetChange(0);
+                    attribute.ProposedLevelChange.Value = 0;
                 }
             }
         }
@@ -61,13 +61,13 @@ namespace LooCast.UI.Button
             int maxLevel = attribute.MaxLevel.Value;
             if (currentLevel < maxLevel)
             {
-                tokensValue.SetChange(-attribute.GetCost(attribute.Level.Value + attributeIncrement));
+                attribute.ProposedLevelChange.Value = -attribute.GetCost(attribute.Level.Value + attributeIncrement);
             }
         }
 
         public override void OnHoverStop()
         {
-            tokensValue.SetChange(0);
+            attribute.ProposedLevelChange.Value = 0;
         }
     } 
 }

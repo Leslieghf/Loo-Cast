@@ -114,5 +114,43 @@ namespace LooCast.Attribute.Stat
             Vitality.Level.Value = Vitality.MaxLevel.Value;
             Wits.Level.Value = Wits.MaxLevel.Value;
         }
+
+        public void Uncheat()
+        {
+            Agility.Level.Value = 0;
+            Alertness.Level.Value = 0;
+            Awareness.Level.Value = 0;
+            Body.Level.Value = 0;
+            Brawn.Level.Value = 0;
+            Cautiousness.Level.Value = 0;
+            Chance.Level.Value = 0;
+            Charm.Level.Value = 0;
+            Ego.Level.Value = 0;
+            Endurance.Level.Value = 0;
+            Fate.Level.Value = 0;
+            Fortitude.Level.Value = 0;
+            Fortune.Level.Value = 0;
+            Intellect.Level.Value = 0;
+            Knowledge.Level.Value = 0;
+            Might.Level.Value = 0;
+            Mind.Level.Value = 0;
+            Personality.Level.Value = 0;
+            Power.Level.Value = 0;
+            Presence.Level.Value = 0;
+            Psyche.Level.Value = 0;
+            Quickness.Level.Value = 0;
+            Recovery.Level.Value = 0;
+            Reflexes.Level.Value = 0;
+            Resilience.Level.Value = 0;
+            Resistance.Level.Value = 0;
+            Resolve.Level.Value = 0;
+            Sanity.Level.Value = 0;
+            Sense.Level.Value = 0;
+            Social.Level.Value = 0;
+            Spirit.Level.Value = 0;
+            Stamina.Level.Value = 0;
+            Vitality.Level.Value = 0;
+            Wits.Level.Value = 0;
+        }
     } 
 }

@@ -10,29 +10,28 @@ namespace LooCast.UI.Bar
         public Image sliderImage { get; protected set; }
         public Image borderImage { get; protected set; }
 
-        public override void Initialize(float value, float maxValue)
+        private void Start()
         {
-            base.Initialize(value, maxValue);
             sliderImage = transform.Find("SliderImage").GetComponent<Image>();
             borderImage = transform.Find("BorderImage").GetComponent<Image>();
         }
 
-        public virtual void Initialize(float maxValue)
+        public override void Refresh()
         {
-            Initialize(maxValue, maxValue);
+            
         }
 
-        public bool isDepleted
+        public bool IsDepleted
         {
             get
             {
-                return _isDepleted;
+                return isDepleted;
             }
 
             set
             {
-                _isDepleted = value;
-                if (_isDepleted)
+                isDepleted = value;
+                if (isDepleted)
                 {
                     sliderImage.color = Color.yellow;
                 }
@@ -42,6 +41,6 @@ namespace LooCast.UI.Bar
                 }
             }
         }
-        protected bool _isDepleted = false;
+        protected bool isDepleted = false;
     } 
 }

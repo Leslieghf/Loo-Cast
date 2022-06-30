@@ -8,24 +8,29 @@ namespace LooCast.UI.Value
 {
     public class StatValue : Value
     {
-        public Stat stat;
+        public Stat Stat;
 
         public override void Refresh()
         {
-            base.SetValue(stat.Level.Value);
-            base.Refresh();
-        }
-
-        public override void SetChange(int change)
-        {
-            base.SetChange(change);
-            Refresh();
-        }
-
-        public override void SetValue(int value)
-        {
-            base.SetValue(value);
-            Refresh();
+            if (Stat.ProposedLevelChange.Value == 0)
+            {
+                Text.text = $"{Stat.Level.Value}";
+            }
+            else if (Stat.ProposedLevelChange.Value < 0)
+            {
+                if (Stat.Level.Value + Stat.ProposedLevelChange.Value < 0)
+                {
+                    Text.text = $"{Stat.Level.Value}";
+                }
+                else
+                {
+                    Text.text = $"{Stat.Level.Value}<color=#EB3B5A>{Stat.ProposedLevelChange.Value}</color>";
+                }
+            }
+            else if (Stat.ProposedLevelChange.Value > 0)
+            {
+                Text.text = $"{Stat.Level.Value}<color=#20BF6B>+{Stat.ProposedLevelChange.Value}</color>";
+            }
         }
     } 
 }

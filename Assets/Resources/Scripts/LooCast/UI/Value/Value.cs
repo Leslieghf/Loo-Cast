@@ -7,52 +7,23 @@ namespace LooCast.UI.Value
 {
     public abstract class Value : MonoBehaviour
     {
-        protected Text text;
-        protected int value;
-        protected int minValue;
-        protected int change;
+        public Text Text;
 
-        /// <summary>
-        /// Refresh after initializing!
-        /// </summary>
-        public virtual void Initialize(int value, int minValue = 0)
+        private void Start()
         {
-            text = gameObject.GetComponent<Text>();
-            this.value = value;
-            this.minValue = minValue;
+            Refresh();
         }
 
-        public virtual void SetValue(int value)
+        private void OnBecameVisible()
         {
-            this.value = value;
+            Refresh();
         }
 
-        public virtual void SetChange(int change)
+        private void OnEnable()
         {
-            this.change = change;
+            Refresh();
         }
 
-        public virtual void Refresh()
-        {
-            if (change == 0)
-            {
-                text.text = $"{value}";
-            }
-            else if (change < 0)
-            {
-                if (value + change < minValue)
-                {
-                    text.text = $"{value}";
-                }
-                else
-                {
-                    text.text = $"{value}<color=#EB3B5A>{change}</color>";
-                }
-            }
-            else if (change > 0)
-            {
-                text.text = $"{value}<color=#20BF6B>+{change}</color>";
-            }
-        }
+        public abstract void Refresh();
     } 
 }

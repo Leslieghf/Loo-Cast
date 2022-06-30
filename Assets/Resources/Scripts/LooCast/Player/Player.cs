@@ -19,6 +19,8 @@ namespace LooCast.Player
     public class Player : ExtendedMonoBehaviour
     {
         public Stats Stats;
+        public Coins Coins;
+        public Tokens Tokens;
         public PlayerData Data;
         public PlayerHealth Health { get; private set; }
         public Targeting Targeting { get; private set; }
@@ -81,52 +83,28 @@ namespace LooCast.Player
         {
             if (Input.GetKeyDown(KeyCode.F1))
             {
-                Tokens.SetBalance(Tokens.GetBalance() + 100);
+                Tokens.Balance.Value = Tokens.Balance.Value + 100;
             }
 
             if (Input.GetKeyDown(KeyCode.F2))
             {
-                Tokens.SetBalance(Tokens.GetBalance() - 100);
+                Tokens.Balance.Value = Tokens.Balance.Value - 100;
             }
 
             if (Input.GetKeyDown(KeyCode.F3))
             {
-                Coins.SetBalance(Coins.GetBalance() + 1000);
+                Coins.Balance.Value = Coins.Balance.Value + 1000;
             }
 
             if (Input.GetKeyDown(KeyCode.F4))
             {
-                Coins.SetBalance(Coins.GetBalance() - 1000);
+                Coins.Balance.Value = Coins.Balance.Value - 1000;
             }
 
             if (Input.GetKeyDown(KeyCode.F6))
             {
                 Stats.Cheat();
             }
-
-            //if (Input.GetKey(KeyCode.Alpha1))
-            //{
-            //    Weapons.TryGetValue("MultiplexerWeapon", out Weapon weapon);
-            //    weapon.TryFire();
-            //}
-            //
-            //if (Input.GetKey(KeyCode.Alpha2))
-            //{
-            //    Weapons.TryGetValue("LaserEmitterWeapon", out Weapon weapon);
-            //    weapon.TryFire();
-            //}
-            //
-            //if (Input.GetKey(KeyCode.Alpha3))
-            //{
-            //    Weapons.TryGetValue("FreezeRayWeapon", out Weapon weapon);
-            //    weapon.TryFire();
-            //}
-            //
-            //if (Input.GetKey(KeyCode.Alpha4))
-            //{
-            //    Weapons.TryGetValue("ChargedPlasmaLauncherWeapon", out Weapon weapon);
-            //    weapon.TryFire();
-            //}
         }
     } 
 }

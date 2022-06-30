@@ -4,34 +4,25 @@ using UnityEngine;
 
 namespace LooCast.UI.Bar
 {
-    public class Bar : MonoBehaviour
+    public abstract class Bar : MonoBehaviour
     {
-        public UnityEngine.UI.Slider slider;
+        public UnityEngine.UI.Slider Slider;
 
-        public virtual void Initialize(float value, float maxValue)
+        private void Start()
         {
-            SetMaxValue(maxValue);
-            SetValue(value);
+            Refresh();
         }
 
-        public virtual void SetValue(float value)
+        private void OnBecameVisible()
         {
-            slider.value = value;
+            Refresh();
         }
 
-        public virtual void SetMaxValue(float maxValue)
+        private void OnEnable()
         {
-            slider.maxValue = maxValue;
+            Refresh();
         }
 
-        public virtual float GetValue()
-        {
-            return slider.value;
-        }
-        public virtual float GetMaxValue()
-        {
-            return slider.maxValue;
-        }
-
+        public abstract void Refresh();
     } 
 }

@@ -10,18 +10,17 @@ namespace LooCast.UI.Button
 {
     public class StatSetButton : Button
     {
+        public Coins Coins;
         public int statIncrement;
-        public Stat stat;
-        public CoinsValue coinsValue;
-        public StatValue statListValue;
+        public Stat Stat;
 
         public override void OnClick()
         {
-            int currentLevel = stat.Level.Value;
+            int currentLevel = Stat.Level.Value;
             int targetLevel = currentLevel + statIncrement;
-            int cost = stat.GetCost(targetLevel);
-            int balance = Coins.GetBalance();
-            int maxLevel = stat.MaxLevel.Value;
+            int cost = Stat.GetCost(targetLevel);
+            int balance = Coins.Balance.Value;
+            int maxLevel = Stat.MaxLevel.Value;
             bool isValidPurchase = true;
 
             if (cost > balance || currentLevel == targetLevel || targetLevel < 0 || targetLevel > maxLevel)
@@ -31,14 +30,14 @@ namespace LooCast.UI.Button
 
             if (isValidPurchase)
             {
-                Coins.SetBalance(balance - cost);
-                stat.Level.Value = targetLevel;
+                Coins.Balance.Value = balance - cost;
+                Stat.Level.Value = targetLevel;
 
-                currentLevel = stat.Level.Value;
+                currentLevel = Stat.Level.Value;
                 targetLevel = currentLevel + statIncrement;
-                cost = stat.GetCost(targetLevel);
-                balance = Coins.GetBalance();
-                maxLevel = stat.MaxLevel.Value;
+                cost = Stat.GetCost(targetLevel);
+                balance = Coins.Balance.Value;
+                maxLevel = Stat.MaxLevel.Value;
 
                 if (cost > balance || currentLevel == targetLevel || targetLevel < 0 || targetLevel > maxLevel)
                 {
@@ -47,27 +46,27 @@ namespace LooCast.UI.Button
 
                 if (isValidPurchase)
                 {
-                    coinsValue.SetChange(-stat.GetCost(stat.Level.Value + statIncrement));
-                    statListValue.SetChange(statIncrement);
+                    Coins.ProposedBalanceChange.Value = -Stat.GetCost(Stat.Level.Value + statIncrement);
+                    Stat.ProposedLevelChange.Value = statIncrement;
                 }
                 else
                 {
-                    coinsValue.SetChange(0);
-                    statListValue.SetChange(0);
+                    Coins.ProposedBalanceChange.Value = 0;
+                    Stat.ProposedLevelChange.Value = 0;
                 }
             }
         }
 
         public override void OnHoverStart()
         {
-            coinsValue.SetChange(-stat.GetCost(stat.Level.Value + statIncrement));
-            statListValue.SetChange(statIncrement);
+            Coins.ProposedBalanceChange.Value = -Stat.GetCost(Stat.Level.Value + statIncrement);
+            Stat.ProposedLevelChange.Value = statIncrement;
         }
 
         public override void OnHoverStop()
         {
-            coinsValue.SetChange(0);
-            statListValue.SetChange(0);
+            Coins.ProposedBalanceChange.Value = 0;
+            Stat.ProposedLevelChange.Value = 0;
         }
     } 
 }

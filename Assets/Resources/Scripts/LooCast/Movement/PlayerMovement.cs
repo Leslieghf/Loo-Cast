@@ -82,7 +82,7 @@ namespace LooCast.Movement
                 {
                     energy = maxEnergy;
                     isEnergyDepleted = false;
-                    energyBar.isDepleted = false;
+                    energyBar.IsDepleted = false;
                 }
                 else
                 {
@@ -96,7 +96,7 @@ namespace LooCast.Movement
                 {
                     energy = 0.0f;
                     isEnergyDepleted = true;
-                    energyBar.isDepleted = true;
+                    energyBar.IsDepleted = true;
                     GameSceneManager.Instance.SoundHandler.SoundCooldown();
                 }
                 else

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,33 +7,23 @@ namespace LooCast.UI.Level
 {
     public abstract class Level : MonoBehaviour
     {
-        protected Text text;
-        protected int value;
-        protected int maxValue;
+        public Text Text;
 
-        /// <summary>
-        /// Refresh after initializing!
-        /// </summary>
-        public virtual void Initialize(int value, int maxValue)
+        private void Start()
         {
-            text = gameObject.GetComponent<Text>();
-            this.value = value;
-            this.maxValue = maxValue;
+            Refresh();
         }
 
-        public virtual void SetValue(int value)
+        private void OnBecameVisible()
         {
-            this.value = value;
+            Refresh();
         }
 
-        public virtual void SetMaxValue(int maxValue)
+        private void OnEnable()
         {
-            this.maxValue = maxValue;
+            Refresh();
         }
 
-        public virtual void Refresh()
-        {
-            text.text = $"{value}/{maxValue}";
-        }
-    } 
+        public abstract void Refresh();
+    }
 }

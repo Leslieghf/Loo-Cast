@@ -7,29 +7,29 @@ namespace LooCast.UI.Value
 {
     public class CoinsValue : Value
     {
-        public override void Initialize(int value, int minValue = 0)
-        {
-            base.Initialize(value, minValue);
-            Coins.onBalanceChanged.AddListener(Refresh);
-            Refresh();
-        }
+        public Coins Coins;
 
         public override void Refresh()
         {
-            base.SetValue(Coins.GetBalance());
-            base.Refresh();
-        }
-
-        public override void SetChange(int change)
-        {
-            base.SetChange(change);
-            Refresh();
-        }
-
-        public override void SetValue(int value)
-        {
-            base.SetValue(value);
-            Refresh();
+            if (Coins.ProposedBalanceChange.Value == 0)
+            {
+                Text.text = $"{Coins.Balance.Value}";
+            }
+            else if (Coins.ProposedBalanceChange.Value < 0)
+            {
+                if (Coins.Balance.Value + Coins.ProposedBalanceChange.Value < 0)
+                {
+                    Text.text = $"{Coins.Balance.Value}";
+                }
+                else
+                {
+                    Text.text = $"{Coins.Balance.Value}<color=#EB3B5A>{Coins.ProposedBalanceChange.Value}</color>";
+                }
+            }
+            else if (Coins.ProposedBalanceChange.Value > 0)
+            {
+                Text.text = $"{Coins.Balance.Value}<color=#20BF6B>+{Coins.ProposedBalanceChange.Value}</color>";
+            }
         }
     } 
 }

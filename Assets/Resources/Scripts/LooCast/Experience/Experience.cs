@@ -11,6 +11,8 @@ namespace LooCast.Experience
     public class Experience : MonoBehaviour
     {
         public Stats Stats;
+        public Coins Coins;
+        public Tokens Tokens;
         
         public float experience = 0;
         public float levelExperienceMax = 10;
@@ -36,7 +38,7 @@ namespace LooCast.Experience
 
         public void AddExperience(float xp)
         {
-            Coins.SetBalance(Coins.GetBalance() + Mathf.RoundToInt(xp));
+            Coins.Balance.Value = Coins.Balance.Value + Mathf.RoundToInt(xp);
             experience += xp * experienceMultiplier;
 
             UpdateLevelProgress(experience);
@@ -72,7 +74,7 @@ namespace LooCast.Experience
             level++;
             levelCounter.SetLevel(level);
             levelExperienceMax = levelExperienceMax * levelExperienceMultiplier;
-            Tokens.SetBalance(Tokens.GetBalance() + 1);
+            Tokens.Balance.Value = Tokens.Balance.Value + 1;
             experienceBar.SetMaxValue(levelExperienceMax);
             soundHandler.SoundUpgrade();
         }
