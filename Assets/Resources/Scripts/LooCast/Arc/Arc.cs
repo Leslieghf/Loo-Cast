@@ -4,7 +4,7 @@ using UnityEngine;
 namespace LooCast.Arc
 {
     using Target;
-    using Util;
+    using Core;
 
     public class Arc : ExtendedMonoBehaviour
     {
@@ -173,7 +173,7 @@ namespace LooCast.Arc
             }
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             lifetime += Time.deltaTime;
             if (lifetime > maxLifetime)

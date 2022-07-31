@@ -6,9 +6,9 @@ namespace LooCast.Station
 {
     using Target;
     using Weapon;
-    using Data.Weapon;
+    using Weapon.Data;
     using Health;
-    using Data.Station;
+    using Station.Data;
 
     [RequireComponent(typeof(PlayerStationHealth), typeof(Targeting), typeof(MultiplexerWeapon))]
     public class PlayerStation : Station
@@ -28,7 +28,7 @@ namespace LooCast.Station
             Initialize(Data);
 
             Health = GetComponent<PlayerStationHealth>();
-            Health.Initialize(Data.HealthData);
+            Health.Initialize(Health.DataData);
 
             Targeting = GetComponent<Targeting>();
             Targeting.Initialize();

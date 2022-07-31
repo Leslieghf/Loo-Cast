@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LooCast.Health
 {
-    using Data.Health;
+    using Health.Data;
 
     public class PlayerStationHealth : StationHealth
     {

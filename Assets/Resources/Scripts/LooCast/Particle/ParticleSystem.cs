@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LooCast.Particle
 {
-    using Util;
+    using Core;
 
     [RequireComponent(typeof(UnityEngine.ParticleSystem))]
     public class ParticleSystem : ExtendedMonoBehaviour
@@ -20,7 +20,7 @@ namespace LooCast.Particle
             destructionScheduled = false;
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             if (destructionScheduled)
             {

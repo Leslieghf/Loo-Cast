@@ -5,20 +5,27 @@ using UnityEngine.UI;
 
 namespace LooCast.UI.Bar
 {
+    using LooCast.Movement.Data;
+    using LooCast.Movement.Data.Runtime;
+
     public class EnergyBar : Bar
     {
-        public Image sliderImage { get; protected set; }
-        public Image borderImage { get; protected set; }
+        public Image SliderImage { get; protected set; }
+        public Image BorderImage { get; protected set; }
+        public PlayerMovementData PlayerMovementData;
+        public PlayerMovementRuntimeData PlayerMovementRuntimeData;
 
         private void Start()
         {
-            sliderImage = transform.Find("SliderImage").GetComponent<Image>();
-            borderImage = transform.Find("BorderImage").GetComponent<Image>();
+            SliderImage = transform.Find("SliderImage").GetComponent<Image>();
+            BorderImage = transform.Find("BorderImage").GetComponent<Image>();
         }
 
         public override void Refresh()
         {
-            
+            Slider.minValue = 0.0f;
+            Slider.maxValue = PlayerMovementData.MaxEnergy.Value;
+            Slider.value = PlayerMovementRuntimeData.CurrentEnergy.Value;
         }
 
         public bool IsDepleted
@@ -33,11 +40,11 @@ namespace LooCast.UI.Bar
                 isDepleted = value;
                 if (isDepleted)
                 {
-                    sliderImage.color = Color.yellow;
+                    SliderImage.color = Color.yellow;
                 }
                 else
                 {
-                    sliderImage.color = Color.green;
+                    SliderImage.color = Color.green;
                 }
             }
         }

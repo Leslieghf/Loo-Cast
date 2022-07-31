@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace LooCast.Orb
 {
+    using Core;
     using Attribute.Stat;
     using Util;
-    using Experience;
     using Sound;
 
     public class MagnetOrb : ExtendedMonoBehaviour
@@ -28,7 +28,7 @@ namespace LooCast.Orb
             pickupRangeMultiplier = Stats.RangeMultiplier;
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             if (playerObject.transform != null)
             {

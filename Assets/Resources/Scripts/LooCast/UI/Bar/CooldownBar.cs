@@ -9,7 +9,7 @@ namespace LooCast.UI.Bar
     using Sound;
 
     public class CooldownBar : Bar
-    {
+    { 
         [SerializeField] private string weaponName;
         private Weapon weapon;
 

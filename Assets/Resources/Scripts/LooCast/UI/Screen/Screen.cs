@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Manager;
-using LooCast.Util;
-using LooCast.UI.Canvas;
 
 namespace LooCast.UI.Screen
 {
+    using LooCast.Core;
+    using LooCast.Manager;
+    using LooCast.UI.Canvas;
+
     public abstract class Screen : ExtendedMonoBehaviour
     {
         protected bool isHideable;
@@ -17,7 +18,7 @@ namespace LooCast.UI.Screen
 
         public virtual void Initialize(InterfaceCanvas canvas)
         {
-            isVisible = isInitiallyVisible;
+            IsVisible = isInitiallyVisible;
             this.canvas = canvas;
 
             if (!isHideable)
@@ -94,13 +95,13 @@ namespace LooCast.UI.Screen
                 transform.SetAsLastSibling();
             }
 
-            isVisible = show;
+            IsVisible = show;
             foreach (GameObject obj in hideableObjects)
             {
                 obj.SetActive(show);
             }
 
-            if (isVisible)
+            if (IsVisible)
             {
                 Refresh();
             }
@@ -113,12 +114,12 @@ namespace LooCast.UI.Screen
 
         public virtual bool GetVisibility()
         {
-            return isVisible;
+            return IsVisible;
         }
 
         public virtual void ToggleVisibility()
         {
-            SetVisibility(!isVisible);
+            SetVisibility(!IsVisible);
         }
     } 
 }

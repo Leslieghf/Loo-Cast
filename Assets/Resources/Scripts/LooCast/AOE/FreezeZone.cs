@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Util;
-using LooCast.Movement;
-using LooCast.Attribute.Stat;
 
 namespace LooCast.AOE
 {
+    using Core;
+    using Attribute.Stat;
+
     public class FreezeZone : ExtendedMonoBehaviour
     {
         public Stats Stats;
@@ -48,7 +48,7 @@ namespace LooCast.AOE
             transform.localScale = baseScale * 0.1f; 
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             if (isMovingToTarget)
             {

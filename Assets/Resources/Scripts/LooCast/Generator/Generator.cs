@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LooCast.Generator
 {
-    using Util;
+    using Core;
 
     public abstract class Generator : ExtendedMonoBehaviour
     {

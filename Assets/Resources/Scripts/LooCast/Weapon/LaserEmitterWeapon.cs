@@ -7,7 +7,7 @@ using System.Linq;
 namespace LooCast.Weapon
 {
     using Target;
-    using Data.Weapon;
+    using Weapon.Data;
 
     public class LaserEmitterWeapon : Weapon
     {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace LooCast.Indicator
 {
-    using Util;
+    using Core;
 
     public class DamageIndicator : ExtendedMonoBehaviour
     {
@@ -23,7 +23,7 @@ namespace LooCast.Indicator
             initialPosition = (transform as RectTransform).anchoredPosition;
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             timer += Time.deltaTime;
             if (timer >= animationTime)

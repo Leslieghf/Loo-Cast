@@ -2,12 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Attribute.Stat;
 using LooCast.Currency;
 using LooCast.UI.Value;
 
 namespace LooCast.UI.Button
 {
+    using Attribute.Stat;
+
     public class StatSetButton : Button
     {
         public Coins Coins;

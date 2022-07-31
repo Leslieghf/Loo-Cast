@@ -6,7 +6,8 @@ using UnityEngine.Events;
 namespace LooCast.Movement
 {
     using Manager;
-    using UI.Bar;
+    using Data;
+    using Data.Runtime;
     using Util;
     using Attribute.Stat;
 
@@ -14,101 +15,57 @@ namespace LooCast.Movement
     {
         public Stats Stats;
 
-        public UnityEvent onStartAccelerating;
-        public UnityEvent onStopAccelerating;
-        public EnergyBar energyBar;
+        public UnityEvent OnStartAccelerating;
+        public UnityEvent OnStopAccelerating;
 
+        public PlayerMovementData Data; //Incorrectly hides stuff
+        public PlayerMovementRuntimeData RuntimeData;
 
-        public float baseEnergy { get; protected set; }
-        public float energy 
-        { 
-            get
-            {
-                return energyBar.GetValue();
-            }
-            set
-            {
-                energyBar.SetValue(value);
-            }
+        private void Start()
+        {
+            BaseEnergy = 500.0f;
+            BaseEnergyConsumption = 1.0f;
+            BaseEnergyGeneration = 1.0f;
+
+            EnergyConsumption = BaseEnergyConsumption * Stats.EnergyConsumptionMultiplier;
+            EnergyGeneration = BaseEnergyGeneration * Stats.EnergyRegenerationMultiplier;
+
+            IsUsingEnergy = false;
         }
 
-
-        public float maxEnergy 
+        protected override void OnPauseableUpdate()
         {
-            get
+            base.OnPauseableUpdate();
+            if (!IsUsingEnergy)
             {
-                return energyBar.GetMaxValue();
-            }
-            protected set
-            {
-                energyBar.SetMaxValue(value);
-            }
-        }
-
-
-        public float baseEnergyConsumption { get; protected set; }
-        public float energyConsumption { get; protected set; }
-
-
-        public float baseEnergyGeneration { get; protected set; }
-        public float energyGeneration { get; protected set; }
-
-
-        private bool isUsingEnergy;
-        private bool isEnergyDepleted;
-
-        public override void Initialize()
-        {
-            base.Initialize();
-
-            baseEnergy = 500.0f;
-            baseEnergyConsumption = 1.0f;
-            baseEnergyGeneration = 1.0f;
-
-            energyBar = FindObjectOfType<EnergyBar>();
-            energyBar.Initialize(baseEnergy * Stats.EnergyMultiplier);
-            energyConsumption = baseEnergyConsumption * Stats.EnergyConsumptionMultiplier;
-            energyGeneration = baseEnergyGeneration * Stats.EnergyRegenerationMultiplier;
-
-            isUsingEnergy = false;
-        }
-
-        protected override void Cycle()
-        {
-            base.Cycle();
-            if (!isUsingEnergy)
-            {
-                if (energy + energyGeneration >= maxEnergy)
+                if (CurrentEnergy + EnergyGeneration >= MaxEnergy)
                 {
-                    energy = maxEnergy;
-                    isEnergyDepleted = false;
-                    energyBar.IsDepleted = false;
+                    CurrentEnergy = MaxEnergy;
+                    IsEnergyDepleted = false;
                 }
                 else
                 {
-                    energy += energyGeneration;
+                    CurrentEnergy += EnergyGeneration;
                 }
             }
-            if (isUsingEnergy && !isEnergyDepleted)
+            if (IsUsingEnergy && !IsEnergyDepleted)
             {
-                energyBar.sliderImage.color = Color.green;
-                if (energy - energyConsumption <= 0.0f)
+                if (CurrentEnergy - EnergyConsumption <= 0.0f)
                 {
-                    energy = 0.0f;
-                    isEnergyDepleted = true;
-                    energyBar.IsDepleted = true;
+                    CurrentEnergy = 0.0f;
+                    IsEnergyDepleted = true;
                     GameSceneManager.Instance.SoundHandler.SoundCooldown();
                 }
                 else
                 {
-                    energy -= energyConsumption;
+                    CurrentEnergy -= EnergyConsumption;
                 }
             }
         }
 
         public override void Accelerate()
         {
-            isUsingEnergy = false;
+            IsUsingEnergy = false;
             float[] axis = new float[2];
             if (Input.touchCount > 0)
             {
@@ -130,22 +87,22 @@ namespace LooCast.Movement
                 axis[1] = Input.GetAxis("Vertical");
             }
 
-            if ((axis[0] == 0 && axis[1] == 0) || isEnergyDepleted)
+            if ((axis[0] == 0 && axis[1] == 0) || IsEnergyDepleted)
             {
-                onStopAccelerating.Invoke();
+                OnStopAccelerating.Invoke();
             }
             else
             {
-                onStartAccelerating.Invoke();
-                if (!isEnergyDepleted)
+                OnStartAccelerating.Invoke();
+                if (!IsEnergyDepleted)
                 {
-                    isUsingEnergy = true;
+                    IsUsingEnergy = true;
                 }
             }
 
-            if (!isEnergyDepleted)
+            if (!IsEnergyDepleted)
             {
-                rigidbody.AddForce(new Vector2(axis[0], axis[1]).normalized * movementSpeed * Stats.MovementSpeedMultiplier * Constants.INERTIAL_COEFFICIENT); 
+                Rigidbody.AddForce(new Vector2(axis[0], axis[1]).normalized * MovementSpeed * Stats.MovementSpeedMultiplier * Constants.INERTIAL_COEFFICIENT); 
             }
         }
     } 

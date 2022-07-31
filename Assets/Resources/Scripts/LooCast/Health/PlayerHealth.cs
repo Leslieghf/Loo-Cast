@@ -1,26 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
-
 namespace LooCast.Health
 {
+    using Data;
     using Sound;
     using UI.Bar;
     using UI.Screen;
     using Attribute.Stat;
     using Manager;
-    using Data.Health;
+    using Player;
 
     public class PlayerHealth : Health
     {
         public Stats Stats;
 
-        private HealthBar healthBar;
         private GameSoundHandler soundHandler;
         private DeathScreen deathScreen;
 
-        public void Initialize(PlayerHealthData data)
+        public void Initialize(Player player, PlayerHealthData data)
         {
             base.Initialize(data);
 
@@ -28,9 +23,6 @@ namespace LooCast.Health
             health = data.MaxHealth * Stats.HealthMultiplier;
             regenerationAmount = data.RegenerationAmount * Stats.HealthRegenrationMultiplier;
             defense = data.Defense + Stats.DefenseIncrease;
-
-            healthBar = FindObjectOfType<HealthBar>();
-            healthBar.Initialize(maxHealth, maxHealth);
 
             soundHandler = FindObjectOfType<GameSoundHandler>();
             deathScreen = FindObjectOfType<DeathScreen>();

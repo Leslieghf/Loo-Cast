@@ -86,7 +86,7 @@ namespace LooCast.UI.Screen
             {
                 canvas.screenStack.Push(this);
                 transform.SetAsLastSibling();
-                isVisible = true;
+                IsVisible = true;
                 fade.gameObject.SetActive(true);
                 fade.Play("Fade");
                 isFading = true;

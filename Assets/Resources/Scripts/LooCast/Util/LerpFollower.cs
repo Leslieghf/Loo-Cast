@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Util;
 
-namespace LooCast
+namespace LooCast.Util
 {
+    using Core;
+
     public class LerpFollower : ExtendedMonoBehaviour
     {
         public GameObject target;
 
         public float speed = 1.0f;
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             float interpolation = speed * Time.deltaTime * (target.transform.position - transform.position).magnitude;
 

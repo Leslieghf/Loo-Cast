@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Attribute.Stat;
-using LooCast.Util;
-using LooCast.Experience;
-using LooCast.Sound;
 
 namespace LooCast.Orb
 {
+    using Core;
+    using Util;
+    using Experience;
+    using Sound;
+    using Attribute.Stat;
+
     public class ExperienceOrb : ExtendedMonoBehaviour
     {
         public Stats Stats;
@@ -21,7 +23,7 @@ namespace LooCast.Orb
         private float experience = 1.0f;
         private GameObject playerObject;
         private CircleCollider2D playerCollider;
-        private Experience.Experience playerExperience;
+        private Experience playerExperience;
         private GameSoundHandler soundHandler;
         private static float pickupRangeMultiplier;
 
@@ -45,12 +47,11 @@ namespace LooCast.Orb
             playerCollider = playerObject.GetComponent<CircleCollider2D>();
             soundHandler = GameObject.FindObjectOfType<GameSoundHandler>();
             pickupRangeMultiplier = Stats.RangeMultiplier;
-            isVisible = true;
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
-            if (isVisible)
+            if (IsVisible)
             {
                 if (playerObject != null)
                 {

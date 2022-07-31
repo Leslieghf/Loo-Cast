@@ -8,7 +8,7 @@ namespace LooCast.Health
     using Sound;
     using UI.Canvas;
     using Manager;
-    using Data.Health;
+    using Health.Data;
 
     public class StationHealth : Health
     {

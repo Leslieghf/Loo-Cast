@@ -26,8 +26,8 @@ namespace LooCast.Movement
         {
             if (isMovementEnabled)
             {
-                rigidbody.drag = baseDrag / slownessMultiplier;
-                rigidbody.AddForce((target.transform.position - transform.position).normalized * Constants.INERTIAL_COEFFICIENT * movementSpeed * slownessMultiplier);
+                Rigidbody.drag = baseDrag / SlownessMultiplier;
+                Rigidbody.AddForce((target.transform.position - transform.position).normalized * Constants.INERTIAL_COEFFICIENT * MovementSpeed * SlownessMultiplier);
 
                 Vector2 lookDir = target.transform.position - transform.position;
                 float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90.0f;

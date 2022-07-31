@@ -8,7 +8,7 @@ namespace LooCast.Health
     using Random;
     using Orb;
     using Sound;
-    using Data.Health;
+    using Health.Data;
     using Attribute.Stat;
 
     public class EnemyHealth : Health
@@ -31,7 +31,7 @@ namespace LooCast.Health
             magnetDropChance = data.BaseMagnetDropChance.Value * Stats.RandomChanceMultiplier;
             experienceDropChance = data.BaseExperienceDropChance.Value * Stats.RandomChanceMultiplier;
             experienceDropAmount = data.BaseExperienceDropAmount.Value;
-            experienceOrbPrefab = data.ExperienceOrbPrefab;
+            experienceOrbPrefab = Experience.DataOrbPrefab;
             magnetOrbPrefab = data.MagnetOrbPrefab;
         }
 

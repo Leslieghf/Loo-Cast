@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Attribute;
-using LooCast.Attribute.Stat;
 
 namespace LooCast.UI.Value
 {
+    using Attribute.Stat;
+
     public class StatValue : Value
     {
         public Stat Stat;

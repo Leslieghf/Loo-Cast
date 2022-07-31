@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace LooCast.Weapon
 {
-    using Attribute.Stat;
+    using Core;
+    using Attribute.Data.Stat;
     using Sound;
-    using Util;
     using Target;
-    using Data.Weapon;
+    using Weapon.Data;
 
     [RequireComponent(typeof(Targeting))]
     public abstract class Weapon : ExtendedMonoBehaviour
@@ -80,7 +80,7 @@ namespace LooCast.Weapon
             hasCooledDown = false;
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             if (attackTimer <= 0.0f)
             {

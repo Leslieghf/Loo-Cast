@@ -4,7 +4,9 @@ using UnityEngine;
 
 namespace LooCast.Player
 {
-    using Util;
+    using Core;
+    using Data;
+    using Data.Runtime;
     using Health;
     using Target;
     using Movement;
@@ -13,7 +15,6 @@ namespace LooCast.Player
     using Currency;
     using Experience;
     using Attribute.Stat;
-    using Data.Player;
 
     [RequireComponent(typeof(PlayerHealth), typeof(Targeting), typeof(PlayerMovement)), DisallowMultipleComponent]
     public class Player : ExtendedMonoBehaviour
@@ -32,7 +33,7 @@ namespace LooCast.Player
         private void Awake()
         {
             Health = GetComponent<PlayerHealth>();
-            Health.Initialize(Data.HealthData);
+            Health.Initialize(this, Data.HealthData);
 
             Targeting = GetComponent<Targeting>();
             Targeting.Initialize();
@@ -73,13 +74,13 @@ namespace LooCast.Player
 
             Movement = GetComponent<PlayerMovement>();
             Movement.Initialize();
-            Movement.onMovementDisabled.AddListener(ParticleSystem.PauseParticleSpawning);
-            Movement.onMovementEnabled.AddListener(ParticleSystem.ResumeParticleSpawning);
-            Movement.onStartAccelerating.AddListener(ParticleSystem.ResumeParticleSpawning);
-            Movement.onStopAccelerating.AddListener(ParticleSystem.PauseParticleSpawning);
+            Movement.OnMovementDisabled.AddListener(ParticleSystem.PauseParticleSpawning);
+            Movement.OnMovementEnabled.AddListener(ParticleSystem.ResumeParticleSpawning);
+            Movement.OnStartAccelerating.AddListener(ParticleSystem.ResumeParticleSpawning);
+            Movement.OnStopAccelerating.AddListener(ParticleSystem.PauseParticleSpawning);
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             if (Input.GetKeyDown(KeyCode.F1))
             {

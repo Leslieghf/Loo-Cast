@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Attribute.Stat;
-using LooCast.UI.Canvas;
-using LooCast.UI.Screen;
 
 namespace LooCast.UI.Button
 {

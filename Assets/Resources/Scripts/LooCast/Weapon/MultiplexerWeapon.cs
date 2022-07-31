@@ -8,7 +8,7 @@ namespace LooCast.Weapon
     using Target;
     using Projectile;
     using System;
-    using Data.Weapon;
+    using Weapon.Data;
 
     public class MultiplexerWeapon : Weapon
     {

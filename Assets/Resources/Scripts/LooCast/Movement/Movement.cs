@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using LooCast.Util;
 using UnityEngine.Events;
 
 namespace LooCast.Movement
 {
+    using Core;
+    using Data;
+
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
-    public abstract class Movement : ExtendedMonoBehaviour, IMovement
+    public abstract class Movement : Component, IMovement
     {
-        public UnityEvent onMovementEnabled;
-        public UnityEvent onMovementDisabled;
-        protected float slownessMultiplier;
-        protected bool isMovementEnabled;
+        public MovementData Data;
+
+        public UnityEvent OnMovementEnabled { get; protected set; }
+        public UnityEvent OnMovementDisabled { get; protected set; }
+        public float SlownessMultiplier { get; protected set; }
         public bool IsMovementEnabled 
         { 
             get
@@ -24,37 +27,39 @@ namespace LooCast.Movement
             {
                 if (value)
                 {
-                    onMovementEnabled.Invoke();
+                    OnMovementEnabled.Invoke();
                 }
                 else
                 {
-                    onMovementDisabled.Invoke();
+                    OnMovementDisabled.Invoke();
                 }
                 isMovementEnabled = value;
             }
         }
-        protected float movementSpeed = 1.0f;
-        protected new Rigidbody2D rigidbody;
-        protected new Collider2D collider;
+        protected bool isMovementEnabled;
+        public float MovementSpeed { get; protected set; }
+        public Rigidbody2D Rigidbody { get; protected set; }
+        public Collider2D Collider { get; protected set; }
 
         private Vector3 PAUSE_currentVelocity;
 
         private void Start()
         {
-            Initialize();
+            Initialize(Data);
         }
 
-        public virtual void Initialize()
+        public void Initialize(MovementData data)
         {
-            onMovementEnabled = new UnityEvent();
-            onMovementDisabled = new UnityEvent();
-            slownessMultiplier = 1.0f;
-            isMovementEnabled = true;
-            rigidbody = GetComponent<Rigidbody2D>();
-            collider = GetComponent<Collider2D>();
+            OnMovementEnabled = new UnityEvent();
+            OnMovementDisabled = new UnityEvent();
+            SlownessMultiplier = data.SlownessMultiplier.Value;
+            IsMovementEnabled = data.IsMovementEnabled.Value;
+            MovementSpeed = data.MovementSpeed.Value;
+            Rigidbody = GetComponent<Rigidbody2D>();
+            Collider = GetComponent<Collider2D>();
         }
 
-        protected override void FixedCycle()
+        protected override void OnPauseableFixedUpdate()
         {
             Accelerate();
         }
@@ -63,12 +68,12 @@ namespace LooCast.Movement
 
         public virtual float GetSlownessMultiplier()
         {
-            return slownessMultiplier;
+            return SlownessMultiplier;
         }
 
         public virtual void SetSlownessMultiplier(float slownessMultiplier)
         {
-            this.slownessMultiplier = slownessMultiplier;
+            this.SlownessMultiplier = slownessMultiplier;
         }
 
         public virtual bool GetMovementEnabled()
@@ -83,23 +88,23 @@ namespace LooCast.Movement
 
         public float GetMovementSpeed()
         {
-            return movementSpeed;
+            return MovementSpeed;
         }
 
         public void SetMovementSpeed(float movementSpeed)
         {
-            this.movementSpeed = movementSpeed;
+            this.MovementSpeed = movementSpeed;
         }
 
         protected override void OnPause()
         {
-            PAUSE_currentVelocity = rigidbody.velocity;
-            rigidbody.velocity = Vector3.zero;
+            PAUSE_currentVelocity = Rigidbody.velocity;
+            Rigidbody.velocity = Vector3.zero;
         }
 
         protected override void OnResume()
         {
-            rigidbody.velocity = PAUSE_currentVelocity;
+            Rigidbody.velocity = PAUSE_currentVelocity;
             PAUSE_currentVelocity = Vector3.zero;
         }
     } 

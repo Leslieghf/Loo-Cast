@@ -6,14 +6,14 @@ using UnityEngine.Events;
 
 namespace LooCast.Enemy
 {
+    using Core;
     using Particle;
     using Manager;
     using Movement;
-    using Util;
     using Health;
     using Target;
     using Experience;
-    using Data.Enemy;
+    using Enemy.Data;
 
     [RequireComponent(typeof(Movement), typeof(EnemyHealth)), DisallowMultipleComponent]
     public abstract class Enemy : ExtendedMonoBehaviour
@@ -40,11 +40,11 @@ namespace LooCast.Enemy
 
             Movement = GetComponent<EnemyMovement>();
             Movement.Initialize();
-            Movement.onMovementDisabled.AddListener(ParticleSystem.PauseParticleSpawning);
-            Movement.onMovementEnabled.AddListener(ParticleSystem.ResumeParticleSpawning);
+            Movement.OnMovementDisabled.AddListener(ParticleSystem.PauseParticleSpawning);
+            Movement.OnMovementEnabled.AddListener(ParticleSystem.ResumeParticleSpawning);
 
             Health = GetComponent<EnemyHealth>();
-            Health.Initialize(Data.HealthData);
+            Health.Initialize(Health.DataData);
             Health.onKilled.AddListener(Kill);
 
             PlayerTargeting = GameSceneManager.Instance.Player.Targeting;

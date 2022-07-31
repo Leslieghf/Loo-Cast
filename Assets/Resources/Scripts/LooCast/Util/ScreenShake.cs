@@ -7,6 +7,8 @@ using UnityEngine;
 
 namespace LooCast.Util
 {
+    using Core;
+
     public sealed class ScreenShake : ExtendedMonoBehaviour
     {
         private float shakeTimer;
@@ -26,7 +28,7 @@ namespace LooCast.Util
 
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             if (Input.GetKeyDown(KeyCode.K))
             {

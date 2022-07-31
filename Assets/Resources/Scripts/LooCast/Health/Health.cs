@@ -3,11 +3,11 @@ using UnityEngine.Events;
 
 namespace LooCast.Health
 {
-    using Util;
+    using Core;
+    using Data;
     using Random;
     using Indicator;
     using UI.Canvas;
-    using Data.Health;
 
     public abstract class Health : ExtendedMonoBehaviour
     {
@@ -22,7 +22,7 @@ namespace LooCast.Health
         public UnityEvent onKilled;
         protected WorldSpaceCanvas canvas;
 
-        public void Initialize(StatData data)
+        public void Initialize(HealthData data)
         {
             maxHealth = data.BaseMaxHealth.Value;
             health = maxHealth;
@@ -40,7 +40,7 @@ namespace LooCast.Health
             canvas = FindObjectOfType<WorldSpaceCanvas>();
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             Heal(regenerationAmount * Time.deltaTime);
         }

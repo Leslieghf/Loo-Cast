@@ -6,7 +6,7 @@ namespace LooCast.Generator
 {
     using Random;
     using Station;
-    using Data.Station;
+    using Station.Data;
 
     public class PlayerStationGenerator : Generator
     {

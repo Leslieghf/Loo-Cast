@@ -7,8 +7,8 @@ namespace LooCast.Station
 {
     using Util;
     using Health;
-    using Data.Health;
-    using Data.Station;
+    using Health.Data;
+    using Station.Data;
     using Data.Runtime;
 
     [DisallowMultipleComponent]

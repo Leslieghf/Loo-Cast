@@ -6,7 +6,7 @@ namespace LooCast.Station
 {
     using Spawner;
     using Health;
-    using Data.Station;
+    using Station.Data;
 
     [RequireComponent(typeof(EnemyStationHealth))]
     public class EnemyStation : Station
@@ -25,7 +25,7 @@ namespace LooCast.Station
             Initialize(Data);
 
             Health = GetComponent<EnemyStationHealth>();
-            Health.Initialize(Data.HealthData);
+            Health.Initialize(Health.DataData);
 
             Spawner = GetComponentInChildren<EnemySpawner>();
             Spawner.Initialize();

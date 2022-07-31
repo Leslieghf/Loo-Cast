@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LooCast.Spawner
 {
     using Enemy;
-    using Data.Spawner;
+    using Spawner.Data;
     using Data.Runtime;
 
     public class EnemySpawner : Spawner
@@ -28,11 +28,11 @@ namespace LooCast.Spawner
             SpawnDelay = Data.BaseSpawnDelay.Value;
             SpawnTimer = 0.0f;
             MaxEnemies = Data.BaseMaxEnemies.Value;
-            Prefab = Data.EnemyPrefab;
+            Prefab = Enemy.DataPrefab;
             SpawnedEnemies = new List<Enemy>();
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             SpawnTimer += Time.deltaTime;
 

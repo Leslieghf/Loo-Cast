@@ -5,15 +5,16 @@ using UnityEngine;
 
 namespace LooCast.Manager
 {
+    using Core;
     using UI.Canvas;
     using Util;
     using Sound;
     using Spawner;
     using Background;
     using Player;
-    using Station;
+    using Station.Data.Runtime;
+    using Enemy.Data.Runtime;
     using Generator;
-    using Data.Runtime;
 
     public class GameSceneManager : SceneManager
     {

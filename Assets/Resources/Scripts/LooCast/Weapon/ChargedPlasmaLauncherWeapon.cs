@@ -6,7 +6,7 @@ namespace LooCast.Weapon
 {
     using Projectile;
     using Target;
-    using Data.Weapon;
+    using Weapon.Data;
 
     public class ChargedPlasmaLauncherWeapon : Weapon
     {

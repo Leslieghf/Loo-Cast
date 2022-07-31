@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace LooCast.Projectile
 {
-    using Util;
+    using Core;
     using Target;
 
     [RequireComponent(typeof(Rigidbody2D))]
@@ -71,7 +71,7 @@ namespace LooCast.Projectile
             onLostTarget.AddListener(OnLostTarget);
         }
 
-        protected override void Cycle()
+        protected override void OnPauseableUpdate()
         {
             lifetime -= Time.deltaTime;
             if (lifetime <= 0)
